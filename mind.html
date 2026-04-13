@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind &amp; Trail // BLK MEN HIKE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg class="svg-filters" aria-hidden="true">
+    <filter id="df-heavy" x="-20%" y="-20%" width="140%" height="140%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="4" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="df-light" x="-10%" y="-10%" width="120%" height="120%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="2" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+</svg>
+
+<div class="grain" aria-hidden="true"></div>
+
+<div class="viewport-frame" aria-hidden="true">
+    <div class="fc fc-tl"></div><div class="fc fc-tr"></div>
+    <div class="fc fc-bl"></div><div class="fc fc-br"></div>
+</div>
+
+<nav class="global-nav" aria-label="Main navigation">
+    <div class="sys-data">BMH // SYSTEM V2.4<br>44.5902° N, 104.7146° W</div>
+    <div class="nav-right">
+        <a class="nav-link" href="mind.html">MIND</a>
+        <a class="nav-link" href="city-guides.html">TRAILS</a>
+        <a class="nav-link" href="expeditions.html">EVENTS</a>
+        <a class="nav-link" href="join.html">ROSTER</a>
+        <button class="menu-trigger" onclick="openMenu()" aria-label="Open menu">MENU.</button>
+    </div>
+</nav>
+
+<div id="nav-overlay" role="dialog" aria-modal="true">
+    <button class="overlay-close" onclick="closeMenu()">CLOSE.</button>
+    <a class="overlay-item" href="index.html" onclick="closeMenu()">HOME</a>
+    <a class="overlay-item" href="story.html" onclick="closeMenu()">OUR STORY</a>
+    <a class="overlay-item" href="mind.html" onclick="closeMenu()">MIND &amp; TRAIL</a>
+    <a class="overlay-item" href="city-guides.html" onclick="closeMenu()">CITY GUIDES</a>
+    <a class="overlay-item" href="gear.html" onclick="closeMenu()">GEAR</a>
+    <a class="overlay-item" href="hwb.html" onclick="closeMenu()">HIKING WHILE BLACK</a>
+    <a class="overlay-item" href="stories.html" onclick="closeMenu()">BROTHERHOOD</a>
+    <a class="overlay-item" href="expeditions.html" onclick="closeMenu()">EXPEDITIONS</a>
+    <a class="overlay-item" href="trail-guides.html" onclick="closeMenu()">TRAIL GUIDES</a>
+    <a class="overlay-item" href="join.html" onclick="closeMenu()">JOIN THE ROSTER</a>
+    <div class="overlay-sys">NO MAN LEFT BEHIND // EST. 2024</div>
+</div>
+
+<div class="doodle-bar" aria-hidden="true">
+    <svg viewBox="0 0 100 100" class="doodle"><path d="M10,80 L32,35 L48,60 L75,25 L90,80 Z"/><path d="M85,10 L78,20 L86,22 L75,35" stroke-width="2"/></svg>
+    <svg viewBox="0 0 100 100" class="doodle"><circle cx="50" cy="50" r="22"/><path d="M40,60 Q50,70 60,60"/><path d="M50,15 L50,5 M15,50 L5,50 M85,50 L95,50 M50,85 L50,95"/></svg>
+    <svg viewBox="0 0 100 100" class="doodle"><path d="M15,25 Q50,20 85,25 L95,40 L80,55 Q45,60 10,55 L5,40 Z"/><path d="M50,55 L50,95"/></svg>
+</div>
+
+<!-- MENTAL HEALTH -->
+<section id="mental-health">
+    <div class="mh-header">
+        <div>
+            <div class="section-tag">02 // MIND &amp; TRAIL</div>
+            <h2 class="section-title reveal" style="font-size:clamp(3rem,6vw,5.5rem)">THE TRAIL<br>HEALS.</h2>
+        </div>
+        <p class="reveal" style="max-width:440px;font-size:1.1rem;line-height:1.7;color:#bbb">Black men face unique barriers to mental health care. Nature is one of the most powerful and accessible tools we have. Here's what happens when you lace up and step out.</p>
+    </div>
+    <div class="mh-cards">
+        <div class="mh-card reveal"><div class="mh-card-num">MH_001</div><div class="mh-card-title">STRESS<br>REDUCTION</div><p class="mh-card-body">Studies show 20 minutes in nature lowers cortisol levels significantly. For Black men carrying the weight of racial stress, the trail is therapy without a co-pay.</p></div>
+        <div class="mh-card reveal reveal-delay-1"><div class="mh-card-num">MH_002</div><div class="mh-card-title">BUILT-IN<br>BROTHERHOOD</div><p class="mh-card-body">Isolation is a silent killer. Group hikes create structured social connection — men talking, laughing, venting — in an environment that naturally drops the guard and deepens trust.</p></div>
+        <div class="mh-card reveal reveal-delay-2"><div class="mh-card-num">MH_003</div><div class="mh-card-title">DIGITAL<br>DETOX</div><p class="mh-card-body">The algorithm is designed to keep you anxious. The mountain isn't. Hours on the trail equal hours away from news cycles, social media, and the constant noise of modern life.</p></div>
+        <div class="mh-card reveal"><div class="mh-card-num">MH_004</div><div class="mh-card-title">PHYSICAL<br>STRENGTH</div><p class="mh-card-body">Cardiovascular health, blood pressure, vitamin D — Black men are statistically hit hardest by these gaps. The trail addresses all three simultaneously.</p></div>
+        <div class="mh-card reveal reveal-delay-1"><div class="mh-card-num">MH_005</div><div class="mh-card-title">MASTERY &amp;<br>CONFIDENCE</div><p class="mh-card-body">Reaching a summit you weren't sure you could reach is a visceral experience of personal power. That feeling carries back into every room you walk into.</p></div>
+        <div class="mh-card reveal reveal-delay-2"><div class="mh-card-num">MH_006</div><div class="mh-card-title">RECLAIM<br>THE LAND</div><p class="mh-card-body">For generations outdoor spaces were sites of trauma for Black Americans. Being present — joyful, powerful, and free — in these spaces is itself a radical act of healing.</p></div>
+    </div>
+    <div class="mh-quote reveal">
+        <div class="mh-quote-mark">"</div>
+        <div class="mh-quote-text">The great Harriet Tubman was technically a hiker. She used the land to liberate. We are doing the same thing — liberating ourselves from everything that tells us we don't belong out here.</div>
+        <div class="mh-quote-attr">// BLK MEN HIKE // TRAIL WISDOM SERIES</div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-brand">BLK<span>.</span>MEN<span>.</span>HIKE</div>
+    <div class="footer-links">
+        <a class="footer-link" href="mind.html">MIND &amp; TRAIL</a>
+        <a class="footer-link" href="city-guides.html">CITY GUIDES</a>
+        <a class="footer-link" href="gear.html">GEAR</a>
+        <a class="footer-link" href="stories.html">STORIES</a>
+        <a class="footer-link" href="join.html">ROSTER</a>
+    </div>
+    <div class="footer-sys">EST. 2024 // BUILT BY US. FOR US.<br>BLKMENHIKE.COM // NO MAN LEFT BEHIND<br>44.5902° N, 104.7146° W</div>
+</footer>
+
+<script>
+    function openMenu() { document.getElementById('nav-overlay').classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeMenu() { document.getElementById('nav-overlay').classList.remove('open'); document.body.style.overflow = ''; }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

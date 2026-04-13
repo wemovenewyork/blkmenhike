@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join the Roster // BLK MEN HIKE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg class="svg-filters" aria-hidden="true">
+    <filter id="df-heavy" x="-20%" y="-20%" width="140%" height="140%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="4" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="df-light" x="-10%" y="-10%" width="120%" height="120%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="2" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+</svg>
+
+<div class="grain" aria-hidden="true"></div>
+
+<div class="viewport-frame" aria-hidden="true">
+    <div class="fc fc-tl"></div><div class="fc fc-tr"></div>
+    <div class="fc fc-bl"></div><div class="fc fc-br"></div>
+</div>
+
+<nav class="global-nav" aria-label="Main navigation">
+    <div class="sys-data">BMH // SYSTEM V2.4<br>44.5902° N, 104.7146° W</div>
+    <div class="nav-right">
+        <a class="nav-link" href="mind.html">MIND</a>
+        <a class="nav-link" href="city-guides.html">TRAILS</a>
+        <a class="nav-link" href="expeditions.html">EVENTS</a>
+        <a class="nav-link" href="join.html">ROSTER</a>
+        <button class="menu-trigger" onclick="openMenu()" aria-label="Open menu">MENU.</button>
+    </div>
+</nav>
+
+<div id="nav-overlay" role="dialog" aria-modal="true">
+    <button class="overlay-close" onclick="closeMenu()">CLOSE.</button>
+    <a class="overlay-item" href="index.html" onclick="closeMenu()">HOME</a>
+    <a class="overlay-item" href="story.html" onclick="closeMenu()">OUR STORY</a>
+    <a class="overlay-item" href="mind.html" onclick="closeMenu()">MIND &amp; TRAIL</a>
+    <a class="overlay-item" href="city-guides.html" onclick="closeMenu()">CITY GUIDES</a>
+    <a class="overlay-item" href="gear.html" onclick="closeMenu()">GEAR</a>
+    <a class="overlay-item" href="hwb.html" onclick="closeMenu()">HIKING WHILE BLACK</a>
+    <a class="overlay-item" href="stories.html" onclick="closeMenu()">BROTHERHOOD</a>
+    <a class="overlay-item" href="expeditions.html" onclick="closeMenu()">EXPEDITIONS</a>
+    <a class="overlay-item" href="trail-guides.html" onclick="closeMenu()">TRAIL GUIDES</a>
+    <a class="overlay-item" href="join.html" onclick="closeMenu()">JOIN THE ROSTER</a>
+    <div class="overlay-sys">NO MAN LEFT BEHIND // EST. 2024</div>
+</div>
+
+<div class="doodle-bar" aria-hidden="true">
+    <svg viewBox="0 0 100 100" class="doodle"><path d="M10,80 L32,35 L48,60 L75,25 L90,80 Z"/><path d="M85,10 L78,20 L86,22 L75,35" stroke-width="2"/></svg>
+    <svg viewBox="0 0 100 100" class="doodle"><circle cx="50" cy="50" r="22"/><path d="M40,60 Q50,70 60,60"/><path d="M50,15 L50,5 M15,50 L5,50 M85,50 L95,50 M50,85 L50,95"/></svg>
+    <svg viewBox="0 0 100 100" class="doodle"><path d="M15,25 Q50,20 85,25 L95,40 L80,55 Q45,60 10,55 L5,40 Z"/><path d="M50,55 L50,95"/></svg>
+</div>
+
+<!-- JOIN THE ROSTER -->
+<section id="join">
+    <img class="bg-img" src="https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=2070&auto=format&fit=crop" alt="Mountain peak" loading="eager">
+    <div class="overlay" style="background:linear-gradient(90deg,rgba(5,5,5,0.93) 0%,rgba(5,5,5,0.45) 100%)"></div>
+    <div class="inner">
+        <div class="join-grid">
+            <div>
+                <div class="section-tag">BMH // ENLISTMENT</div>
+                <div class="brand-vert" style="margin-bottom:1.5rem"><span>JOIN THE</span><span>ROSTER</span></div>
+                <h2 class="d-title reveal" style="font-size:clamp(3rem,7vw,7rem)">READY<br>FOR THE<br>SUMMIT?</h2>
+                <div class="join-info reveal">
+                    <div class="join-info-item">
+                        <h4>WHO THIS IS FOR</h4>
+                        <p>Black men of all experience levels — from never-hiked-a-day to seasoned backcountry. You don't need gear. You don't need experience. You just need to show up.</p>
+                    </div>
+                    <div class="join-info-item">
+                        <h4>WHAT YOU GET</h4>
+                        <p>Access to local hike groups, city-specific trail guides, the brotherhood network, gear swap programs, and the BLK MEN HIKE monthly field report.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-box reveal">
+                <div class="form-group"><label class="form-label">GOVERNMENT NAME</label><input class="form-input" type="text" placeholder="FULL NAME"></div>
+                <div class="form-group"><label class="form-label">COMMUNICATION LINE</label><input class="form-input" type="email" placeholder="EMAIL ADDRESS"></div>
+                <div class="form-group"><label class="form-label">LOCATION BASE</label><input class="form-input" type="text" placeholder="CITY, STATE"></div>
+                <div class="form-group"><label class="form-label">EXPERIENCE LEVEL</label><input class="form-input" type="text" placeholder="NOVICE / VET / LEAD"></div>
+                <button class="form-submit">
+                    <svg viewBox="0 0 400 70" preserveAspectRatio="none"><path d="M4,10 L395,4 L388,62 L12,66 Z" vector-effect="non-scaling-stroke" stroke-linejoin="round"/></svg>
+                    CONFIRM ENLISTMENT
+                </button>
+            </div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border)">
+            <div class="meta-stats">
+                <div class="meta-block"><span class="meta-label">STATUS</span><span class="meta-value">OPEN</span></div>
+                <div class="meta-block"><span class="meta-label">PRIORITY</span><span class="meta-value">HIGH</span></div>
+                <div class="meta-block"><span class="meta-label">CLEARANCE</span><span class="meta-value">L-1</span></div>
+            </div>
+            <div class="sys-data" style="text-align:right">TRANS: ENCRYPTED<br>NO MAN LEFT BEHIND</div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <div class="contact-grid">
+        <div>
+            <div class="accent-bar"></div>
+            <div class="section-tag">BMH // INTAKE SYSTEM</div>
+            <h2 class="section-title reveal" style="font-size:clamp(3rem,6vw,5.5rem)">JOIN THE<br>LINEUP.</h2>
+            <div class="contact-info-items">
+                <div class="contact-info-item reveal">
+                    <h3>THE SUMMIT</h3>
+                    <p>We don't just hike; we occupy spaces that were never built for us. Reach out to coordinate trail starts, gear logistics, chapter launches, or media inquiries.</p>
+                </div>
+                <div class="contact-info-item reveal reveal-delay-1">
+                    <h3>COORDINATES</h3>
+                    <p>Base Ops: Denver, CO / Portland, OR<br>Global: Anywhere the air is thin.<br>Email: outreach@blkmenhike.com</p>
+                </div>
+                <div class="contact-info-item reveal reveal-delay-2">
+                    <h3>FOR BRANDS</h3>
+                    <p>Partnership, sponsorship, and affiliate inquiries welcome. We are the access point to Black male outdoor culture. Let's build something real.</p>
+                </div>
+            </div>
+        </div>
+        <div class="form-box reveal" style="align-self:start">
+            <div class="form-group"><label class="form-label">Identity // Name</label><input class="form-input" type="text" placeholder="NAME / CALLSIGN"></div>
+            <div class="form-group"><label class="form-label">Comms // Email</label><input class="form-input" type="email" placeholder="SECURE_ADDRESS@MAIL.COM"></div>
+            <div class="form-group"><label class="form-label">Exp // Level</label><input class="form-input" type="text" placeholder="NOVICE / VET / LEAD"></div>
+            <div class="form-group"><label class="form-label">Transmission</label><textarea class="form-input" rows="5" placeholder="MESSAGE TO THE BROTHERHOOD..." style="font-size:1rem;resize:none;font-family:var(--font-body)"></textarea></div>
+            <button class="form-submit">
+                <svg viewBox="0 0 200 60" preserveAspectRatio="none"><path d="M4,4 L196,6 L192,56 L6,54 Z" vector-effect="non-scaling-stroke" stroke-linejoin="round"/></svg>
+                Initiate Contact
+            </button>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-brand">BLK<span>.</span>MEN<span>.</span>HIKE</div>
+    <div class="footer-links">
+        <a class="footer-link" href="mind.html">MIND &amp; TRAIL</a>
+        <a class="footer-link" href="city-guides.html">CITY GUIDES</a>
+        <a class="footer-link" href="gear.html">GEAR</a>
+        <a class="footer-link" href="stories.html">STORIES</a>
+        <a class="footer-link" href="join.html">ROSTER</a>
+    </div>
+    <div class="footer-sys">EST. 2024 // BUILT BY US. FOR US.<br>BLKMENHIKE.COM // NO MAN LEFT BEHIND<br>44.5902° N, 104.7146° W</div>
+</footer>
+
+<script>
+    function openMenu() { document.getElementById('nav-overlay').classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeMenu() { document.getElementById('nav-overlay').classList.remove('open'); document.body.style.overflow = ''; }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
