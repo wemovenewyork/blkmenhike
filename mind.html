@@ -18,6 +18,43 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .mind-hero { position: relative; min-height: 70vh; display: flex; align-items: flex-end; overflow: hidden; }
+        .mind-hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; filter: brightness(0.35) contrast(1.15); z-index: 1; }
+        .mind-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(5,5,5,1) 0%, rgba(5,5,5,0.15) 60%, transparent 100%); z-index: 2; }
+        .mind-hero-content { position: relative; z-index: 10; padding: 0 80px 80px; width: 100%; }
+        .mind-hero-eyebrow { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.25em; color: var(--accent); text-transform: uppercase; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 1rem; }
+        .mind-hero-eyebrow::before { content: ''; display: inline-block; width: 30px; height: 2px; background: var(--accent); }
+        .mind-hero-title { font-family: var(--font-display); font-size: clamp(3rem, 7vw, 6.5rem); line-height: 0.88; text-transform: uppercase; filter: url(#df-heavy); max-width: 850px; margin-bottom: 2rem; }
+        .mind-hero-sub { max-width: 520px; font-size: 1.05rem; line-height: 1.75; color: #bbb; }
+        .mind-editorial { max-width: 820px; margin: 0 auto; padding: 80px 80px 0; }
+        .mind-editorial-label { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.2em; color: var(--accent); text-transform: uppercase; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem; }
+        .mind-editorial-label::before { content: ''; display: inline-block; width: 24px; height: 1px; background: var(--accent); }
+        .mind-editorial-heading { font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 2.8rem); line-height: 1.0; text-transform: uppercase; filter: url(#df-light); margin-bottom: 2rem; }
+        .mind-editorial-p { font-size: 1.05rem; line-height: 1.9; color: #ccc; margin-bottom: 1.8rem; }
+        .mind-editorial-p strong { color: var(--white); }
+        .mind-pull { margin: 3.5rem 0; padding: 2rem 2.5rem; border-left: 4px solid var(--accent); }
+        .mind-pull-text { font-family: var(--font-display); font-size: clamp(1.2rem, 2.2vw, 1.6rem); line-height: 1.3; text-transform: uppercase; filter: url(#df-light); color: var(--white); }
+        .mind-fraternal { background: #0d0d0d; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 80px; margin: 80px 0 0; }
+        .mind-fraternal-inner { max-width: 820px; margin: 0 auto; }
+        .mind-fraternal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem; }
+        .mind-fraternal-item { border-top: 1px solid var(--border); padding-top: 1.5rem; }
+        .mind-fraternal-num { font-family: var(--font-mono); font-size: 0.55rem; color: var(--accent); letter-spacing: 0.15em; margin-bottom: 0.8rem; text-transform: uppercase; }
+        .mind-fraternal-title { font-family: var(--font-display); font-size: 1.1rem; text-transform: uppercase; filter: url(#df-light); margin-bottom: 0.8rem; }
+        .mind-fraternal-body { font-size: 0.95rem; line-height: 1.75; color: #aaa; }
+        .mind-cta { max-width: 820px; margin: 0 auto; padding: 80px 80px 120px; display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; }
+        .mind-cta-text { flex: 1; min-width: 260px; }
+        .mind-cta-heading { font-family: var(--font-display); font-size: clamp(1.5rem, 2.5vw, 2rem); text-transform: uppercase; filter: url(#df-light); margin-bottom: 0.5rem; }
+        .mind-cta-sub { font-family: var(--font-mono); font-size: 0.65rem; color: var(--dim); letter-spacing: 0.1em; text-transform: uppercase; }
+        .mind-cta-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+        @media (max-width: 768px) {
+            .mind-hero-content { padding: 0 20px 60px; }
+            .mind-editorial { padding: 60px 20px 0; }
+            .mind-fraternal { padding: 60px 20px; }
+            .mind-fraternal-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .mind-cta { padding: 60px 20px 80px; }
+        }
+    </style>
 </head>
 <body>
 
@@ -75,29 +112,120 @@
     <svg viewBox="0 0 100 100" class="doodle"><path d="M15,25 Q50,20 85,25 L95,40 L80,55 Q45,60 10,55 L5,40 Z"/><path d="M50,55 L50,95"/></svg>
 </div>
 
-<!-- MENTAL HEALTH -->
-<section id="mental-health">
+<!-- MIND HERO -->
+<div class="mind-hero" style="padding-top: calc(var(--frame-pad) + 40px);">
+    <img class="mind-hero-img" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop" alt="Mountain fog and silence">
+    <div class="mind-hero-overlay"></div>
+    <div class="mind-hero-content">
+        <div class="mind-hero-eyebrow">02 // Mind &amp; Trail // Brotherhood Mental Health</div>
+        <h1 class="mind-hero-title">What the<br>Trail Does<br>to a Man.</h1>
+        <p class="mind-hero-sub">Black men face a mental health crisis that therapy alone can't reach. The trail is not a substitute for care — it's the door that makes care possible. Here's what happens when you step out.</p>
+    </div>
+</div>
+
+<!-- EDITORIAL: WHAT THE TRAIL ACTUALLY DOES -->
+<div class="mind-editorial">
+    <div class="mind-editorial-label">The Case // Field Research</div>
+    <h2 class="mind-editorial-heading reveal">Black Men Don't Talk.<br>The Trail Makes Them.</h2>
+
+    <p class="mind-editorial-p reveal">There is a specific kind of silence that Black men carry. Not the quiet of peace — the quiet of compression. Years of absorbing what the world hands you, processing it alone, converting it into function because that is what is required. You go to work. You lead. You provide. You hold it down. And you do not, under any circumstances, put it on someone else.</p>
+
+    <p class="mind-editorial-p reveal">This is not a character flaw. It is a survival strategy inherited from men who had no other choice. But survival strategies do not age well. <strong>Black men die younger than any other demographic group in this country.</strong> Hypertension. Heart disease. Suicide. Rates that are rising. And underneath the physical numbers is a mental health reality that almost no one is talking about — because Black men are the ones least likely to talk about it.</p>
+
+    <div class="mind-pull reveal">
+        <div class="mind-pull-text">The trail doesn't ask you to open up. It just removes every reason to stay closed.</div>
+    </div>
+
+    <p class="mind-editorial-p reveal">The research on nature and stress response is not subtle. Twenty minutes in a natural environment measurably lowers cortisol, drops blood pressure, and interrupts the threat-detection loop that keeps the nervous system in a permanent state of low-grade emergency. For Black men navigating a world that activates that threat loop in grocery stores and traffic stops and boardrooms, the forest is not a luxury. It is medicine.</p>
+
+    <p class="mind-editorial-p reveal">But the bigger thing — the thing the studies have a harder time quantifying — is what happens when men move together. Something about sustained physical effort, shared discomfort, limited cell signal, and five miles of trail between you and every obligation breaks the code of silence that men maintain with each other. You are tired. The man next to you is tired. Nobody is performing. And in that unguarded space, grief comes out. Fear comes out. The thing you haven't said to anyone in years comes out — not because you planned it but because the trail has nothing to protect anymore.</p>
+
+    <p class="mind-editorial-p reveal">This is what BMH brothers report, over and over, when they describe their first significant hike with the chapter. Not just the physical achievement. Not just the view. The conversation that happened on mile four that they've been needing to have for a decade.</p>
+</div>
+
+<!-- MENTAL HEALTH CARDS -->
+<section id="mental-health" style="padding-top:60px;">
     <div class="mh-header">
         <div>
-            <div class="section-tag">02 // MIND &amp; TRAIL</div>
-            <h2 class="section-title reveal" style="font-size:clamp(3rem,6vw,5.5rem)">THE TRAIL<br>HEALS.</h2>
+            <div class="section-tag">02A // THE MECHANISMS</div>
+            <h2 class="section-title reveal" style="font-size:clamp(2.5rem,5vw,4.5rem)">SIX THINGS<br>THE TRAIL FIXES.</h2>
         </div>
-        <p class="reveal" style="max-width:440px;font-size:1.1rem;line-height:1.7;color:#bbb">Black men face unique barriers to mental health care. Nature is one of the most powerful and accessible tools we have. Here's what happens when you lace up and step out.</p>
+        <p class="reveal" style="max-width:400px;font-size:1rem;line-height:1.75;color:#bbb">The science is real. The experience is realer. Here is what consistently happens when Black men get on trail — individually and in brotherhood.</p>
     </div>
     <div class="mh-cards">
-        <div class="mh-card reveal"><div class="mh-card-num">MH_001</div><div class="mh-card-title">STRESS<br>REDUCTION</div><p class="mh-card-body">Studies show 20 minutes in nature lowers cortisol levels significantly. For Black men carrying the weight of racial stress, the trail is therapy without a co-pay.</p></div>
-        <div class="mh-card reveal reveal-delay-1"><div class="mh-card-num">MH_002</div><div class="mh-card-title">BUILT-IN<br>BROTHERHOOD</div><p class="mh-card-body">Isolation is a silent killer. Group hikes create structured social connection — men talking, laughing, venting — in an environment that naturally drops the guard and deepens trust.</p></div>
-        <div class="mh-card reveal reveal-delay-2"><div class="mh-card-num">MH_003</div><div class="mh-card-title">DIGITAL<br>DETOX</div><p class="mh-card-body">The algorithm is designed to keep you anxious. The mountain isn't. Hours on the trail equal hours away from news cycles, social media, and the constant noise of modern life.</p></div>
-        <div class="mh-card reveal"><div class="mh-card-num">MH_004</div><div class="mh-card-title">PHYSICAL<br>STRENGTH</div><p class="mh-card-body">Cardiovascular health, blood pressure, vitamin D — Black men are statistically hit hardest by these gaps. The trail addresses all three simultaneously.</p></div>
-        <div class="mh-card reveal reveal-delay-1"><div class="mh-card-num">MH_005</div><div class="mh-card-title">MASTERY &amp;<br>CONFIDENCE</div><p class="mh-card-body">Reaching a summit you weren't sure you could reach is a visceral experience of personal power. That feeling carries back into every room you walk into.</p></div>
-        <div class="mh-card reveal reveal-delay-2"><div class="mh-card-num">MH_006</div><div class="mh-card-title">RECLAIM<br>THE LAND</div><p class="mh-card-body">For generations outdoor spaces were sites of trauma for Black Americans. Being present — joyful, powerful, and free — in these spaces is itself a radical act of healing.</p></div>
+        <div class="mh-card reveal"><div class="mh-card-num">MH_001</div><div class="mh-card-title">STRESS<br>RESPONSE</div><p class="mh-card-body">Twenty minutes in nature measurably lowers cortisol. For Black men absorbing chronic racial stress — the kind that lives in the body — the trail interrupts a loop that nothing else reaches.</p></div>
+        <div class="mh-card reveal reveal-delay-1"><div class="mh-card-num">MH_002</div><div class="mh-card-title">ISOLATION<br>BROKEN</div><p class="mh-card-body">Isolation is a primary driver of male depression and suicide. The chapter gives you a reason to show up — regularly, with the same brothers — and that structure builds the relationship that saves lives.</p></div>
+        <div class="mh-card reveal reveal-delay-2"><div class="mh-card-num">MH_003</div><div class="mh-card-title">GRIEF IN<br>MOTION</div><p class="mh-card-body">Grief doesn't respond to sitting still. The body processes what the mind cannot hold. Miles on a trail do something for loss — divorce, fathers, friends, identity — that sitting in an office cannot replicate.</p></div>
+        <div class="mh-card reveal"><div class="mh-card-num">MH_004</div><div class="mh-card-title">PHYSICAL<br>GROUND</div><p class="mh-card-body">Cardiovascular health, blood pressure, vitamin D deficiency — Black men are statistically hardest hit. The trail is not a substitute for a doctor. It's the reason you go back to the doctor after you thought you didn't need to.</p></div>
+        <div class="mh-card reveal reveal-delay-1"><div class="mh-card-num">MH_005</div><div class="mh-card-title">EARNED<br>CONFIDENCE</div><p class="mh-card-body">The summit you weren't sure you could reach is a different kind of confidence than anything a promotion gives you. It was just you and the mountain and you won. That lands somewhere deep and stays.</p></div>
+        <div class="mh-card reveal reveal-delay-2"><div class="mh-card-num">MH_006</div><div class="mh-card-title">RECLAIM<br>THE LAND</div><p class="mh-card-body">These spaces have history. Being present in them — joyful, powerful, belonging — is not incidental to healing. It is the healing. You are rewriting what outdoor spaces mean for every Black man who comes after you.</p></div>
     </div>
     <div class="mh-quote reveal">
         <div class="mh-quote-mark">"</div>
-        <div class="mh-quote-text">The great Harriet Tubman was technically a hiker. She used the land to liberate. We are doing the same thing — liberating ourselves from everything that tells us we don't belong out here.</div>
+        <div class="mh-quote-text">Harriet Tubman was technically a hiker. She used the land to liberate. We are doing the same — liberating ourselves from everything that told us we don't belong out here.</div>
         <div class="mh-quote-attr">// BLK MEN HIKE // TRAIL WISDOM SERIES</div>
     </div>
 </section>
+
+<!-- FRATERNAL BROTHERHOOD ANGLE -->
+<div class="mind-fraternal">
+    <div class="mind-fraternal-inner">
+        <div class="mind-editorial-label">The Brotherhood // Fraternal Architecture</div>
+        <h2 class="mind-editorial-heading reveal">Why the Chapter<br>Changes Everything.</h2>
+        <p class="mind-editorial-p reveal">There is a specific kind of bond that only forms under conditions of shared effort. Greek organizations understand this. The military understands this. Sports teams understand this. <strong>BMH is built on the same principle:</strong> men who have carried weight together carry each other differently. The chapter is not a hiking club. It is a fraternal structure that uses the trail as its proving ground.</p>
+        <p class="mind-editorial-p reveal">The crossing — a brother's first significant hike with the chapter — is treated as an initiation because it is one. It marks the moment a man moves from curious to committed, from outside to inside, from individual to member of a line. What comes after that moment is a relationship with men who were there when you weren't sure you could make it, who saw you struggle and didn't let you quit, who handed you water at mile four and kept moving.</p>
+        <div class="mind-fraternal-grid">
+            <div class="mind-fraternal-item reveal">
+                <div class="mind-fraternal-num">CONSTRUCT_01 // THE CROSSING</div>
+                <div class="mind-fraternal-title">Your First Real Hike</div>
+                <p class="mind-fraternal-body">Every brother has a crossing — a first hike with the chapter that marks the line between before and after. The brotherhood counts crossings the way other fraternities count pledges. You don't just hike. You become.</p>
+            </div>
+            <div class="mind-fraternal-item reveal reveal-delay-1">
+                <div class="mind-fraternal-num">CONSTRUCT_02 // LINE BROTHERS</div>
+                <div class="mind-fraternal-title">The Men Who Were There</div>
+                <p class="mind-fraternal-body">The men you cross with on a hard trail become line brothers in the truest sense. You shared something real — discomfort, doubt, effort, payoff. That foundation holds differently than a friendship built in a bar.</p>
+            </div>
+            <div class="mind-fraternal-item reveal">
+                <div class="mind-fraternal-num">CONSTRUCT_03 // BIG / LITTLE</div>
+                <div class="mind-fraternal-title">The Mentorship Bond</div>
+                <p class="mind-fraternal-body">Every new brother is brought in by someone — a big brother who vouches, guides, and walks beside. This is not administrative. It is relational accountability. It is the reason most brothers don't quit after the first hard hike.</p>
+            </div>
+            <div class="mind-fraternal-item reveal reveal-delay-1">
+                <div class="mind-fraternal-num">CONSTRUCT_04 // THE CHAPTER</div>
+                <div class="mind-fraternal-title">City by City</div>
+                <p class="mind-fraternal-body">Brotherhood is local before it is national. Your chapter is your city — your brothers, your trails, your traditions. The chapter is what you come back to every week. The national BMH identity is the house. The chapter is home.</p>
+            </div>
+            <div class="mind-fraternal-item reveal">
+                <div class="mind-fraternal-num">CONSTRUCT_05 // THE PLEDGE</div>
+                <div class="mind-fraternal-title">No Man Left Behind</div>
+                <p class="mind-fraternal-body">BMH's founding principle is not a slogan. On the trail it is literal — you do not leave a brother struggling. Off trail it becomes something broader: a commitment to show up for men in your line the way the trail taught you to show up for them.</p>
+            </div>
+            <div class="mind-fraternal-item reveal reveal-delay-1">
+                <div class="mind-fraternal-num">CONSTRUCT_06 // LEGACY</div>
+                <div class="mind-fraternal-title">What You Pass Forward</div>
+                <p class="mind-fraternal-body">When you bring in a little brother, you extend the line. When that brother brings in someone else, the line extends again. The legacy is not the trail you climbed — it is the men who climbed because you showed them it was possible.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CTA -->
+<div class="mind-cta">
+    <div class="mind-cta-text">
+        <div class="mind-cta-heading reveal">Ready to Cross?</div>
+        <div class="mind-cta-sub reveal">Find your chapter. Meet your line brothers. Take the trail.</div>
+    </div>
+    <div class="mind-cta-actions reveal">
+        <a href="join.html" class="btn-rough">
+            <svg viewBox="0 0 200 60" preserveAspectRatio="none"><path d="M4,6 L196,4 L192,54 L8,56 Z" vector-effect="non-scaling-stroke"/></svg>
+            Join the Roster
+        </a>
+        <a href="stories.html" class="btn-rough" style="--accent:#fff">
+            <svg viewBox="0 0 200 60" preserveAspectRatio="none"><path d="M4,6 L196,4 L192,54 L8,56 Z" vector-effect="non-scaling-stroke"/></svg>
+            Brotherhood Stories
+        </a>
+    </div>
+</div>
 
 <footer>
     <div class="footer-brand">BLK<span>.</span>MEN<span>.</span>HIKE</div>
