@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Partnerships // BLK MEN HIKE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .sp-hero { background: var(--black); padding: 160px 80px 100px; border-bottom: 1px solid var(--border); }
+        .sp-hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; }
+        .sp-hero-tag { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.2em; color: var(--accent); text-transform: uppercase; margin-bottom: 1.5rem; }
+        .sp-hero-title { font-family: var(--font-display); font-size: clamp(3rem, 6vw, 5.5rem); line-height: 0.9; text-transform: uppercase; filter: url(#df-heavy); }
+        .sp-hero-sub { font-size: 1.1rem; line-height: 1.7; color: #bbb; margin-bottom: 2.5rem; }
+
+        /* AUDIENCE STATS */
+        .sp-stats { background: #080808; border-bottom: 1px solid var(--border); padding: 80px; display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; }
+        .sp-stat { background: rgba(255,255,255,0.02); border: 1px solid var(--border); padding: 2.5rem 2rem; }
+        .sp-stat-num { font-family: var(--font-display); font-size: 2.8rem; line-height: 1; filter: url(#df-light); color: var(--accent); margin-bottom: 0.5rem; }
+        .sp-stat-label { font-family: var(--font-mono); font-size: 0.58rem; color: var(--dim); text-transform: uppercase; letter-spacing: 0.15em; line-height: 1.6; }
+
+        /* WHO WE REACH */
+        .sp-audience { background: var(--black); border-bottom: 1px solid var(--border); padding: 100px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+        .sp-audience-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.5rem); line-height: 0.9; text-transform: uppercase; filter: url(#df-light); margin-bottom: 2rem; }
+        .sp-audience-body { font-size: 1.05rem; line-height: 1.75; color: #bbb; margin-bottom: 1.5rem; }
+        .sp-demo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); margin-top: 2rem; }
+        .sp-demo-item { background: var(--black); padding: 1.5rem; }
+        .sp-demo-label { font-family: var(--font-mono); font-size: 0.55rem; color: var(--dim); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 0.4rem; }
+        .sp-demo-value { font-family: var(--font-display); font-size: 1.1rem; filter: url(#df-light); text-transform: uppercase; }
+
+        /* TIERS */
+        .sp-tiers { background: #080808; border-bottom: 1px solid var(--border); padding: 100px 80px; }
+        .sp-tiers-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 60px; }
+        .sp-tiers-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--border); }
+        .sp-tier { background: #080808; padding: 40px 32px; display: flex; flex-direction: column; position: relative; transition: background 0.3s; }
+        .sp-tier:hover { background: rgba(232,59,34,0.04); }
+        .sp-tier.featured { background: rgba(232,59,34,0.06); border: 1px solid var(--accent); }
+        .sp-tier-badge { position: absolute; top: -1px; left: 32px; background: var(--accent); font-family: var(--font-mono); font-size: 0.52rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 4px 12px; color: var(--white); }
+        .sp-tier-level { font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem; }
+        .sp-tier-name { font-family: var(--font-display); font-size: 2rem; text-transform: uppercase; filter: url(#df-light); margin-bottom: 0.5rem; }
+        .sp-tier-price { font-family: var(--font-display); font-size: 1.1rem; color: var(--dim); margin-bottom: 2rem; }
+        .sp-tier-features { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; flex: 1; margin-bottom: 2.5rem; }
+        .sp-tier-features li { font-size: 0.9rem; line-height: 1.5; color: #bbb; padding-left: 1.2rem; position: relative; }
+        .sp-tier-features li::before { content: '//'; position: absolute; left: 0; font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent); }
+        .sp-tier-cta { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 12px 0; border-top: 1px solid var(--border); color: var(--dim); transition: color 0.2s; cursor: pointer; }
+        .sp-tier:hover .sp-tier-cta, .sp-tier.featured .sp-tier-cta { color: var(--accent); }
+
+        /* CURRENT PARTNERS */
+        .sp-partners { background: var(--black); border-bottom: 1px solid var(--border); padding: 80px; }
+        .sp-partners-title { font-family: var(--font-mono); font-size: 0.65rem; color: var(--dim); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 3rem; text-align: center; }
+        .sp-partners-row { display: flex; justify-content: center; align-items: center; gap: 4rem; flex-wrap: wrap; }
+        .sp-partner-slot { width: 120px; height: 50px; border: 1px dashed rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; }
+        .sp-partner-slot span { font-family: var(--font-mono); font-size: 0.5rem; color: rgba(255,255,255,0.2); letter-spacing: 0.1em; text-transform: uppercase; }
+
+        /* INQUIRY FORM */
+        .sp-form { background: #080808; padding: 100px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+        .sp-form-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.5rem); line-height: 0.9; text-transform: uppercase; filter: url(#df-light); margin-bottom: 1.5rem; }
+        .sp-form-body { font-size: 1rem; line-height: 1.7; color: #bbb; }
+        .sp-form-contact { margin-top: 2rem; font-family: var(--font-mono); font-size: 0.65rem; color: var(--dim); letter-spacing: 0.1em; }
+        .sp-form-contact a { color: var(--accent); text-decoration: none; }
+
+        @media (max-width: 768px) {
+            .sp-hero { padding: 120px 20px 60px; }
+            .sp-hero-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .sp-stats { padding: 40px 20px; grid-template-columns: 1fr 1fr; }
+            .sp-audience { padding: 60px 20px; grid-template-columns: 1fr; gap: 2rem; }
+            .sp-tiers { padding: 60px 20px; }
+            .sp-tiers-header { flex-direction: column; gap: 1rem; align-items: flex-start; }
+            .sp-tiers-grid { grid-template-columns: 1fr; }
+            .sp-partners { padding: 60px 20px; }
+            .sp-partners-row { gap: 2rem; }
+            .sp-form { padding: 60px 20px; grid-template-columns: 1fr; gap: 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+<svg class="svg-filters" aria-hidden="true">
+    <filter id="df-heavy" x="-20%" y="-20%" width="140%" height="140%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="4" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="df-light" x="-10%" y="-10%" width="120%" height="120%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="2" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+</svg>
+
+<div class="grain" aria-hidden="true"></div>
+
+<div class="viewport-frame" aria-hidden="true">
+    <div class="fc fc-tl"></div><div class="fc fc-tr"></div>
+    <div class="fc fc-bl"></div><div class="fc fc-br"></div>
+</div>
+
+<nav class="global-nav" aria-label="Main navigation">
+    <div class="sys-data">BMH // SYSTEM V2.4<br>44.5902° N, 104.7146° W</div>
+    <div class="nav-right">
+        <a class="nav-link" href="mind.html">MIND</a>
+        <a class="nav-link" href="city-guides.html">TRAILS</a>
+        <a class="nav-link" href="expeditions.html">EVENTS</a>
+        <a class="nav-link" href="join.html">ROSTER</a>
+        <a class="nav-link" href="sponsors.html" style="color:var(--accent)">PARTNERS</a>
+        <button class="menu-trigger" onclick="openMenu()" aria-label="Open menu">MENU.</button>
+    </div>
+</nav>
+
+<div id="nav-overlay" role="dialog" aria-modal="true">
+    <button class="overlay-close" onclick="closeMenu()">CLOSE.</button>
+    <a class="overlay-item" href="index.html" onclick="closeMenu()">HOME</a>
+    <a class="overlay-item" href="story.html" onclick="closeMenu()">OUR STORY</a>
+    <a class="overlay-item" href="mind.html" onclick="closeMenu()">MIND &amp; TRAIL</a>
+    <a class="overlay-item" href="city-guides.html" onclick="closeMenu()">CITY GUIDES</a>
+    <a class="overlay-item" href="gear.html" onclick="closeMenu()">GEAR</a>
+    <a class="overlay-item" href="hwb.html" onclick="closeMenu()">HIKING WHILE BLACK</a>
+    <a class="overlay-item" href="stories.html" onclick="closeMenu()">BROTHERHOOD</a>
+    <a class="overlay-item" href="expeditions.html" onclick="closeMenu()">EXPEDITIONS</a>
+    <a class="overlay-item" href="trail-guides.html" onclick="closeMenu()">TRAIL GUIDES</a>
+    <a class="overlay-item" href="join.html" onclick="closeMenu()">JOIN THE ROSTER</a>
+    <a class="overlay-item" href="sponsors.html" onclick="closeMenu()">PARTNERSHIPS</a>
+    <div class="overlay-sys">NO MAN LEFT BEHIND // EST. 2024</div>
+</div>
+
+<div class="doodle-bar" aria-hidden="true">
+    <svg viewBox="0 0 100 100" class="doodle"><path d="M10,80 L32,35 L48,60 L75,25 L90,80 Z"/><path d="M85,10 L78,20 L86,22 L75,35" stroke-width="2"/></svg>
+    <svg viewBox="0 0 100 100" class="doodle"><circle cx="50" cy="50" r="22"/><path d="M40,60 Q50,70 60,60"/><path d="M50,15 L50,5 M15,50 L5,50 M85,50 L95,50 M50,85 L50,95"/></svg>
+    <svg viewBox="0 0 100 100" class="doodle"><path d="M15,25 Q50,20 85,25 L95,40 L80,55 Q45,60 10,55 L5,40 Z"/><path d="M50,55 L50,95"/></svg>
+</div>
+
+<!-- HERO -->
+<div class="sp-hero">
+    <div class="sp-hero-grid">
+        <div>
+            <div class="sp-hero-tag">BMH // BRAND PARTNERSHIPS</div>
+            <h1 class="sp-hero-title reveal">REACH THE<br>BROTHERHOOD.</h1>
+        </div>
+        <div>
+            <p class="sp-hero-sub reveal">BLK MEN HIKE is the premier platform connecting outdoor brands with Black male hikers across the United States. Our audience is engaged, growing, and underserved by traditional outdoor marketing. This is your access point.</p>
+            <a href="#inquiry" class="btn-rough reveal">
+                <svg viewBox="0 0 260 60" preserveAspectRatio="none"><path d="M4,6 L256,4 L252,54 L8,56 Z" vector-effect="non-scaling-stroke"/></svg>
+                GET IN TOUCH
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- AUDIENCE STATS -->
+<div class="sp-stats">
+    <div class="sp-stat reveal">
+        <div class="sp-stat-num">150+</div>
+        <div class="sp-stat-label">Active Brothers<br>Nationwide</div>
+    </div>
+    <div class="sp-stat reveal reveal-delay-1">
+        <div class="sp-stat-num">7</div>
+        <div class="sp-stat-label">Cities With<br>Active Chapters</div>
+    </div>
+    <div class="sp-stat reveal reveal-delay-2">
+        <div class="sp-stat-num">2.4k</div>
+        <div class="sp-stat-label">Trail Miles<br>Logged</div>
+    </div>
+    <div class="sp-stat reveal reveal-delay-3">
+        <div class="sp-stat-num">100%</div>
+        <div class="sp-stat-label">Black Male<br>Audience Focus</div>
+    </div>
+</div>
+
+<!-- WHO WE REACH -->
+<div class="sp-audience">
+    <div>
+        <div class="section-tag">// WHO WE REACH</div>
+        <h2 class="sp-audience-title reveal">AN AUDIENCE<br>BRANDS OVERLOOK.</h2>
+        <p class="sp-audience-body reveal">The outdoor industry has historically ignored Black consumers — despite the fact that Black Americans are a fast-growing segment of hikers, campers, and trail runners. BLK MEN HIKE gives your brand direct, trusted access to this community.</p>
+        <p class="sp-audience-body reveal">Our audience doesn't just browse — they buy. They're actively seeking gear, trail resources, and brands that reflect their values. A partnership with BMH signals that your brand belongs on their trail.</p>
+    </div>
+    <div>
+        <div class="sp-demo-grid reveal">
+            <div class="sp-demo-item">
+                <div class="sp-demo-label">Primary Audience</div>
+                <div class="sp-demo-value">Black Men</div>
+            </div>
+            <div class="sp-demo-item">
+                <div class="sp-demo-label">Age Range</div>
+                <div class="sp-demo-value">25 – 55</div>
+            </div>
+            <div class="sp-demo-item">
+                <div class="sp-demo-label">Geography</div>
+                <div class="sp-demo-value">National</div>
+            </div>
+            <div class="sp-demo-item">
+                <div class="sp-demo-label">Interest</div>
+                <div class="sp-demo-value">Hiking &amp; Wellness</div>
+            </div>
+            <div class="sp-demo-item">
+                <div class="sp-demo-label">Buying Intent</div>
+                <div class="sp-demo-value">High</div>
+            </div>
+            <div class="sp-demo-item">
+                <div class="sp-demo-label">Growth</div>
+                <div class="sp-demo-value">Active</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SPONSORSHIP TIERS -->
+<div class="sp-tiers">
+    <div class="sp-tiers-header">
+        <div>
+            <div class="section-tag">// PARTNERSHIP PACKAGES</div>
+            <h2 class="section-title reveal" style="font-size:clamp(2.5rem,5vw,4rem)">CHOOSE YOUR<br>LEVEL.</h2>
+        </div>
+        <div class="sys-data" style="text-align:right">ALL PACKAGES<br>NEGOTIABLE</div>
+    </div>
+    <div class="sp-tiers-grid">
+        <!-- TRAIL -->
+        <div class="sp-tier reveal">
+            <div class="sp-tier-level">TIER 01</div>
+            <div class="sp-tier-name">TRAIL</div>
+            <div class="sp-tier-price">Starting at $500 / month</div>
+            <ul class="sp-tier-features">
+                <li>Logo placement in site footer</li>
+                <li>Brand mention in monthly field report email</li>
+                <li>Link on the Gear page</li>
+                <li>Social media shoutout (1x/month)</li>
+            </ul>
+            <div class="sp-tier-cta">INQUIRE ABOUT TRAIL &rarr;</div>
+        </div>
+        <!-- SUMMIT — FEATURED -->
+        <div class="sp-tier featured reveal reveal-delay-1">
+            <div class="sp-tier-badge">MOST POPULAR</div>
+            <div class="sp-tier-level">TIER 02</div>
+            <div class="sp-tier-name">SUMMIT</div>
+            <div class="sp-tier-price">Starting at $1,500 / month</div>
+            <ul class="sp-tier-features">
+                <li>Everything in Trail</li>
+                <li>Dedicated gear feature on the Gear page</li>
+                <li>Brand logo in site header</li>
+                <li>Co-branded expedition event</li>
+                <li>Featured in 1 Brotherhood Story article</li>
+                <li>Social media posts (3x/month)</li>
+            </ul>
+            <div class="sp-tier-cta">INQUIRE ABOUT SUMMIT &rarr;</div>
+        </div>
+        <!-- ALPINE -->
+        <div class="sp-tier reveal reveal-delay-2">
+            <div class="sp-tier-level">TIER 03</div>
+            <div class="sp-tier-name">ALPINE</div>
+            <div class="sp-tier-price">Custom pricing</div>
+            <ul class="sp-tier-features">
+                <li>Everything in Summit</li>
+                <li>Exclusive category sponsorship</li>
+                <li>Full branded content series</li>
+                <li>Named expedition partner</li>
+                <li>Custom gear giveaways for members</li>
+                <li>Quarterly strategy sessions</li>
+                <li>Homepage hero placement</li>
+            </ul>
+            <div class="sp-tier-cta">INQUIRE ABOUT ALPINE &rarr;</div>
+        </div>
+    </div>
+</div>
+
+<!-- CURRENT PARTNERS (placeholder slots) -->
+<div class="sp-partners">
+    <div class="sp-partners-title">// Current Partners — Your brand could be here</div>
+    <div class="sp-partners-row">
+        <div class="sp-partner-slot"><span>YOUR LOGO</span></div>
+        <div class="sp-partner-slot"><span>YOUR LOGO</span></div>
+        <div class="sp-partner-slot"><span>YOUR LOGO</span></div>
+        <div class="sp-partner-slot"><span>YOUR LOGO</span></div>
+        <div class="sp-partner-slot"><span>YOUR LOGO</span></div>
+    </div>
+</div>
+
+<!-- INQUIRY FORM -->
+<div class="sp-form" id="inquiry">
+    <div>
+        <div class="section-tag">// START THE CONVERSATION</div>
+        <h2 class="sp-form-title reveal">LET'S BUILD<br>SOMETHING<br>REAL.</h2>
+        <p class="sp-form-body reveal">We work with brands that are serious about reaching the Black male outdoor community — not just checking a diversity box. If that's you, we want to hear from you.</p>
+        <div class="sp-form-contact reveal">
+            Prefer email? Reach us directly at<br>
+            <a href="mailto:partnerships@blkmenhike.com">partnerships@blkmenhike.com</a>
+        </div>
+    </div>
+    <div class="form-box reveal">
+        <div class="form-group"><label class="form-label">Brand / Company Name</label><input class="form-input" type="text" placeholder="YOUR BRAND"></div>
+        <div class="form-group"><label class="form-label">Your Name</label><input class="form-input" type="text" placeholder="FULL NAME"></div>
+        <div class="form-group"><label class="form-label">Email</label><input class="form-input" type="email" placeholder="YOUR@EMAIL.COM"></div>
+        <div class="form-group"><label class="form-label">Partnership Interest</label><input class="form-input" type="text" placeholder="TRAIL / SUMMIT / ALPINE / CUSTOM"></div>
+        <div class="form-group"><label class="form-label">Tell Us About Your Brand</label><textarea class="form-input" rows="4" placeholder="WHAT YOU DO, WHO YOU SERVE, WHAT YOU'RE LOOKING FOR..." style="font-size:1rem;resize:none;font-family:var(--font-body);text-transform:none"></textarea></div>
+        <button class="form-submit">
+            <svg viewBox="0 0 200 60" preserveAspectRatio="none"><path d="M4,4 L196,6 L192,56 L6,54 Z" vector-effect="non-scaling-stroke" stroke-linejoin="round"/></svg>
+            Send Inquiry
+        </button>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-brand">BLK<span>.</span>MEN<span>.</span>HIKE</div>
+    <div class="footer-links">
+        <a class="footer-link" href="mind.html">MIND &amp; TRAIL</a>
+        <a class="footer-link" href="city-guides.html">CITY GUIDES</a>
+        <a class="footer-link" href="gear.html">GEAR</a>
+        <a class="footer-link" href="stories.html">STORIES</a>
+        <a class="footer-link" href="join.html">ROSTER</a>
+        <a class="footer-link" href="sponsors.html">PARTNERS</a>
+    </div>
+    <div class="footer-sys">EST. 2024 // BUILT BY US. FOR US.<br>BLKMENHIKE.COM // NO MAN LEFT BEHIND<br>44.5902° N, 104.7146° W</div>
+</footer>
+
+<script>
+    function openMenu() { document.getElementById('nav-overlay').classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeMenu() { document.getElementById('nav-overlay').classList.remove('open'); document.body.style.overflow = ''; }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

@@ -337,6 +337,13 @@ footer { background: #030303; border-top: 1px solid var(--border); padding: 60px
 .footer-link:hover { color: var(--accent); }
 .footer-sys { font-family: var(--font-mono); font-size: 0.6rem; color: var(--dimmer); letter-spacing: 0.15em; text-transform: uppercase; text-align: right; line-height: 2; }
 
+/* AFFILIATE DISCLOSURE */
+.gear-affiliate-notice { font-family: var(--font-mono); font-size: 0.6rem; color: var(--dimmer); letter-spacing: 0.08em; line-height: 1.7; padding: 14px 0 40px; border-bottom: 1px solid var(--border); margin-bottom: 60px; max-width: 600px; }
+.gear-affiliate-icon { color: var(--accent); }
+.gear-item-link { text-decoration: none; color: inherit; display: grid; grid-template-columns: 80px 1fr auto; gap: 24px; align-items: center; padding: 24px 0; border-bottom: 1px solid var(--border); transition: border-color 0.2s; }
+.gear-item-link:hover { border-bottom-color: var(--accent); }
+.gear-item-link .gear-name::after { content: ' ↗'; font-size: 0.7em; opacity: 0.5; }
+
 /* SCROLL REVEAL */
 .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
