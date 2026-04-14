@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Into the Big Thicket // BLK MEN HIKE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .article-hero { position: relative; min-height: 60vh; display: flex; align-items: flex-end; overflow: hidden; background: #050505; }
+        .article-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(5,5,5,1) 0%, rgba(5,5,5,0.4) 60%, rgba(5,5,5,0.7) 100%); z-index: 2; }
+        .article-hero-content { position: relative; z-index: 10; padding: 0 80px 80px; width: 100%; }
+        .article-kicker { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.25em; color: var(--accent); text-transform: uppercase; margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; }
+        .article-kicker::before { content: ''; display: inline-block; width: 30px; height: 2px; background: var(--accent); }
+        .article-title { font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 5.5rem); line-height: 0.9; text-transform: uppercase; filter: url(#df-heavy); max-width: 900px; margin-bottom: 1.5rem; }
+        .article-meta { display: flex; gap: 3rem; flex-wrap: wrap; }
+        .article-meta-item { display: flex; flex-direction: column; gap: 3px; }
+        .article-meta-label { font-family: var(--font-mono); font-size: 0.55rem; color: var(--dimmer); text-transform: uppercase; letter-spacing: 0.15em; }
+        .article-meta-value { font-family: var(--font-mono); font-size: 0.72rem; color: var(--white); text-transform: uppercase; letter-spacing: 0.1em; }
+        .article-body { max-width: 780px; margin: 0 auto; padding: 80px 80px 120px; }
+        .article-lead { font-family: var(--font-display); font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.4; color: var(--white); margin-bottom: 3rem; filter: url(#df-light); text-transform: uppercase; border-left: 4px solid var(--accent); padding-left: 1.5rem; }
+        .article-p { font-size: 1.1rem; line-height: 1.85; color: #ccc; margin-bottom: 1.8rem; }
+        .article-quote { margin: 3rem 0; padding: 2rem 2.5rem; border: 1px solid var(--border); position: relative; }
+        .article-quote-mark { font-family: var(--font-display); font-size: 6rem; color: var(--accent); line-height: 0; position: absolute; top: 30px; left: 24px; opacity: 0.25; filter: url(#df-heavy); }
+        .article-quote-text { font-family: var(--font-display); font-size: clamp(1.1rem, 2vw, 1.4rem); line-height: 1.35; text-transform: uppercase; filter: url(#df-light); padding-top: 1rem; color: var(--white); }
+        .article-back { display: inline-flex; align-items: center; gap: 0.6rem; font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--dim); text-decoration: none; margin-bottom: 3rem; transition: color 0.2s; }
+        .article-back:hover { color: var(--accent); }
+        .article-back svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; }
+        .article-trail-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); padding: 2rem 2.5rem; margin: 3rem 0; }
+        .article-trail-card-title { font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1.5rem; }
+        .article-trail-stat { display: flex; flex-direction: column; gap: 4px; margin-bottom: 1.2rem; }
+        .article-trail-stat-label { font-family: var(--font-mono); font-size: 0.55rem; color: var(--dim); text-transform: uppercase; letter-spacing: 0.15em; }
+        .article-trail-stat-value { font-family: var(--font-display); font-size: 1rem; filter: url(#df-light); text-transform: uppercase; }
+        .article-hero-bg { position: absolute; inset: 0; background: linear-gradient(135deg, #050a05 0%, #080f08 50%, #050805 100%); z-index: 0; }
+        .article-hero-geo { position: absolute; inset: 0; z-index: 1; opacity: 0.06; }
+        @media (max-width: 768px) {
+            .article-hero-content { padding: 0 20px 60px; }
+            .article-body { padding: 60px 20px 80px; }
+            .article-meta { gap: 1.5rem; }
+            .article-quote { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+<svg class="svg-filters" aria-hidden="true">
+    <filter id="df-heavy" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="4" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/></filter>
+    <filter id="df-light" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="2" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/></filter>
+</svg>
+<div class="grain" aria-hidden="true"></div>
+<div class="viewport-frame" aria-hidden="true"><div class="fc fc-tl"></div><div class="fc fc-tr"></div><div class="fc fc-bl"></div><div class="fc fc-br"></div></div>
+<nav class="global-nav" aria-label="Main navigation">
+    <div class="sys-data">BMH // SYSTEM V2.4<br>44.5902° N, 104.7146° W</div>
+    <div class="nav-right">
+        <a class="nav-link" href="mind.html">MIND</a>
+        <a class="nav-link" href="city-guides.html">TRAILS</a>
+        <a class="nav-link" href="expeditions.html">EVENTS</a>
+        <a class="nav-link" href="join.html">ROSTER</a>
+        <a class="nav-link" href="sponsors.html" style="color:var(--accent)">PARTNERS</a>
+        <button class="menu-trigger" onclick="openMenu()" aria-label="Open menu">MENU.</button>
+    </div>
+</nav>
+<div id="nav-overlay" role="dialog" aria-modal="true">
+    <button class="overlay-close" onclick="closeMenu()">CLOSE.</button>
+    <a class="overlay-item" href="index.html" onclick="closeMenu()">HOME</a>
+    <a class="overlay-item" href="story.html" onclick="closeMenu()">OUR STORY</a>
+    <a class="overlay-item" href="mind.html" onclick="closeMenu()">MIND &amp; TRAIL</a>
+    <a class="overlay-item" href="city-guides.html" onclick="closeMenu()">CITY GUIDES</a>
+    <a class="overlay-item" href="gear.html" onclick="closeMenu()">GEAR</a>
+    <a class="overlay-item" href="hwb.html" onclick="closeMenu()">HIKING WHILE BLACK</a>
+    <a class="overlay-item" href="stories.html" onclick="closeMenu()">BROTHERHOOD</a>
+    <a class="overlay-item" href="expeditions.html" onclick="closeMenu()">EXPEDITIONS</a>
+    <a class="overlay-item" href="field-reports.html" onclick="closeMenu()">FIELD REPORTS</a>
+    <a class="overlay-item" href="join.html" onclick="closeMenu()">JOIN THE ROSTER</a>
+    <a class="overlay-item" href="sponsors.html" onclick="closeMenu()">PARTNERSHIPS</a>
+    <div class="overlay-sys">NO MAN LEFT BEHIND // EST. 2024</div>
+</div>
+<div class="doodle-bar" aria-hidden="true">
+    <svg viewBox="0 0 100 100" class="doodle"><path d="M10,80 L32,35 L48,60 L75,25 L90,80 Z"/><path d="M85,10 L78,20 L86,22 L75,35" stroke-width="2"/></svg>
+    <svg viewBox="0 0 100 100" class="doodle"><circle cx="50" cy="50" r="22"/><path d="M40,60 Q50,70 60,60"/><path d="M50,15 L50,5 M15,50 L5,50 M85,50 L95,50 M50,85 L50,95"/></svg>
+    <svg viewBox="0 0 100 100" class="doodle"><path d="M15,25 Q50,20 85,25 L95,40 L80,55 Q45,60 10,55 L5,40 Z"/><path d="M50,55 L50,95"/></svg>
+</div>
+
+<div class="article-hero" style="padding-top: calc(var(--frame-pad) + 40px);">
+    <div class="article-hero-bg"></div>
+    <svg class="article-hero-geo" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice"><path d="M0,200 Q200,100 400,300 Q600,500 800,200 Q1000,0 1200,300 L1200,600 L0,600 Z" fill="none" stroke="white" stroke-width="1"/><path d="M0,350 Q300,200 600,400 Q900,600 1200,350 L1200,600 L0,600 Z" fill="none" stroke="white" stroke-width="0.5"/></svg>
+    <div class="article-hero-overlay"></div>
+    <div class="article-hero-content">
+        <div class="article-kicker">Field Report // February 2025 // Houston</div>
+        <h1 class="article-title">Into the<br>Big Thicket:<br><span style="color:var(--accent)">Getting Uncomfortable.</span></h1>
+        <div class="article-meta">
+            <div class="article-meta-item"><span class="article-meta-label">Trail</span><span class="article-meta-value">Turkey Creek, TX</span></div>
+            <div class="article-meta-item"><span class="article-meta-label">Distance</span><span class="article-meta-value">15 mi</span></div>
+            <div class="article-meta-item"><span class="article-meta-label">Elevation</span><span class="article-meta-value">100 ft</span></div>
+            <div class="article-meta-item"><span class="article-meta-label">Author</span><span class="article-meta-value">BMH HOU Chapter</span></div>
+        </div>
+    </div>
+</div>
+
+<div class="article-body">
+    <a href="field-reports.html" class="article-back">
+        <svg viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        Back to Field Reports
+    </a>
+
+    <p class="article-lead reveal">Nobody told me about the silence. Not the quiet of a city street at 3am — real silence. The kind where you can hear your own heartbeat and a woodpecker half a mile away, simultaneously.</p>
+
+    <p class="article-p reveal">Houston doesn't have mountains. That's the first thing people from other cities say when you tell them you hike here. And every time, I want to ask: have you ever stood in the middle of a cypress slough and listened to nothing for five full minutes? Because elevation isn't the only thing that tests you.</p>
+
+    <p class="article-p reveal">The Big Thicket National Preserve sits about 90 minutes northeast of Houston and covers nearly 113,000 acres of some of the most biologically diverse terrain in North America. The National Park Service calls it the "Biological Crossroads of North America." Eastern hardwood forests, Gulf Coast prairies, Southeastern swamps, and Western desert species all collide here. Scientists have found more species of insectivorous plants in the Big Thicket than anywhere else on earth.</p>
+
+    <p class="article-p reveal">We went in February, which is the right call. The insects are dormant. The heat is gone. The understory is stripped down enough that you can actually see into the forest — in summer, this place is a wall of green so thick it has weight.</p>
+
+    <div class="article-quote reveal">
+        <div class="article-quote-mark">"</div>
+        <div class="article-quote-text">The Big Thicket will humble you. Let it. That's the whole point.</div>
+    </div>
+
+    <p class="article-p reveal">Eight brothers from the Houston chapter. We started the Turkey Creek Trail at 7am. Within 20 minutes we were deep enough into the forest that the road was completely gone — no sound of traffic, no planes overhead, no signal on our phones. Just pine forest transitioning into bottomland hardwood, and then into a swampy cypress corridor that smelled like earth and water and time.</p>
+
+    <p class="article-p reveal">The trail is technically flat — less than 100 feet of elevation change across 15 miles. But flat doesn't mean easy. Bottomland trails are technical in their own way: exposed roots, standing water after rain, narrow boardwalks over bog sections, creek crossings that require judgment about depth and current. You have to pay attention. The forest demands presence.</p>
+
+    <p class="article-p reveal">We stopped for lunch at a creek crossing midway through. One of the brothers pointed out a pitcher plant in the mud near the bank — one of four species of carnivorous plants that grow here. It just sat there, patient and alien, doing its thing. Nobody said anything for a while. That's the kind of quiet the Big Thicket produces in people.</p>
+
+    <div class="article-quote reveal">
+        <div class="article-quote-mark">"</div>
+        <div class="article-quote-text">Elevation isn't the only thing that tests you. The forest demands presence.</div>
+    </div>
+
+    <p class="article-p reveal">The last 3 miles back were through late afternoon light coming sideways through the pine canopy. The forest was doing that thing where every shadow has depth and the whole world feels amber. We were moving slower by then — not from exhaustion, but because nobody wanted to rush it.</p>
+
+    <p class="article-p reveal">The Big Thicket is not dramatic. It won't give you the summit photo or the scramble story. What it gives you is something harder to explain and more difficult to find: the sense that you are small, and that small is exactly the right size to be when you're standing in the middle of something ancient.</p>
+
+    <div class="article-trail-card reveal">
+        <div class="article-trail-card-title">// Trail Intel</div>
+        <div class="article-trail-stat">
+            <span class="article-trail-stat-label">Access</span>
+            <span class="article-trail-stat-value">Turkey Creek Trailhead — Big Thicket NP, Kountze TX. No entry fee.</span>
+        </div>
+        <div class="article-trail-stat">
+            <span class="article-trail-stat-label">Recommended Season</span>
+            <span class="article-trail-stat-value">November through March — avoid summer heat and mosquito season</span>
+        </div>
+        <div class="article-trail-stat">
+            <span class="article-trail-stat-label">What to Bring</span>
+            <span class="article-trail-stat-value">Waterproof boots (trail floods seasonally), bug spray even in winter, trekking poles for creek crossings</span>
+        </div>
+        <div class="article-trail-stat">
+            <span class="article-trail-stat-label">BMH Chapter</span>
+            <span class="article-trail-stat-value">HOU — Big Thicket missions run November through February, Saturday mornings</span>
+        </div>
+    </div>
+
+    <p class="article-p reveal">If you're in Houston and you haven't done the Big Thicket, you haven't done Houston. Get out there. Let it humble you.</p>
+</div>
+
+<footer>
+    <div class="footer-brand">BLK<span>.</span>MEN<span>.</span>HIKE</div>
+    <div class="footer-links">
+        <a class="footer-link" href="mind.html">MIND &amp; TRAIL</a>
+        <a class="footer-link" href="city-guides.html">CITY GUIDES</a>
+        <a class="footer-link" href="field-reports.html">FIELD REPORTS</a>
+        <a class="footer-link" href="gear.html">GEAR</a>
+        <a class="footer-link" href="stories.html">STORIES</a>
+        <a class="footer-link" href="join.html">ROSTER</a>
+    </div>
+    <div class="footer-sys">EST. 2024 // BUILT BY US. FOR US.<br>BLKMENHIKE.COM // NO MAN LEFT BEHIND</div>
+</footer>
+<script>
+    function openMenu() { document.getElementById('nav-overlay').classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeMenu() { document.getElementById('nav-overlay').classList.remove('open'); document.body.style.overflow = ''; }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+    const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

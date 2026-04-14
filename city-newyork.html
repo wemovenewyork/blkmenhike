@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New York City Trail Guide // BLK MEN HIKE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .city-pg-hero { background: var(--black); padding: 160px 80px 80px; border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
+        .city-pg-hero::before { content: ''; position: absolute; right: -100px; top: -100px; width: 600px; height: 600px; border-radius: 50%; border: 1px solid var(--border); pointer-events: none; }
+        .city-pg-back { display: inline-flex; align-items: center; gap: 0.6rem; font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--dim); text-decoration: none; margin-bottom: 2.5rem; transition: color 0.2s; }
+        .city-pg-back:hover { color: var(--accent); }
+        .city-pg-back svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; }
+        .city-pg-tag { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.2em; color: var(--accent); text-transform: uppercase; margin-bottom: 1rem; }
+        .city-pg-title { font-family: var(--font-display); font-size: clamp(4rem, 9vw, 8rem); line-height: 0.85; text-transform: uppercase; filter: url(#df-heavy); margin-bottom: 2rem; }
+        .city-pg-meta { display: flex; gap: 3rem; flex-wrap: wrap; padding-top: 2rem; border-top: 1px solid var(--border); }
+        .city-pg-meta-item { display: flex; flex-direction: column; gap: 4px; }
+        .city-pg-meta-label { font-family: var(--font-mono); font-size: 0.55rem; color: var(--dimmer); text-transform: uppercase; letter-spacing: 0.15em; }
+        .city-pg-meta-value { font-family: var(--font-display); font-size: 1rem; filter: url(#df-light); text-transform: uppercase; }
+
+        .city-pg-intro { background: #080808; border-bottom: 1px solid var(--border); padding: 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .city-pg-intro-title { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.8rem); line-height: 0.95; text-transform: uppercase; filter: url(#df-light); margin-bottom: 1.5rem; }
+        .city-pg-intro-body { font-size: 1.05rem; line-height: 1.75; color: #bbb; }
+
+        .city-pg-trails { background: var(--black); border-bottom: 1px solid var(--border); padding: 80px; }
+        .city-pg-trails-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 50px; }
+        .trail-card { border: 1px solid var(--border); padding: 32px; margin-bottom: 2px; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: start; transition: border-color 0.3s, background 0.3s; }
+        .trail-card:hover { border-color: var(--accent); background: rgba(232,59,34,0.03); }
+        .trail-card-name { font-family: var(--font-display); font-size: 1.6rem; line-height: 1; text-transform: uppercase; filter: url(#df-light); margin-bottom: 0.5rem; }
+        .trail-card-loc { font-family: var(--font-mono); font-size: 0.58rem; color: var(--accent); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1rem; }
+        .trail-card-desc { font-size: 0.92rem; line-height: 1.65; color: #bbb; max-width: 580px; }
+        .trail-card-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 1rem; }
+        .trail-card-tag { font-family: var(--font-mono); font-size: 0.52rem; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid var(--border); padding: 4px 10px; color: var(--dim); }
+        .trail-card-stats { display: flex; flex-direction: column; gap: 1rem; min-width: 140px; }
+        .trail-stat { display: flex; flex-direction: column; gap: 3px; text-align: right; }
+        .trail-stat-label { font-family: var(--font-mono); font-size: 0.52rem; color: var(--dimmer); text-transform: uppercase; letter-spacing: 0.12em; }
+        .trail-stat-value { font-family: var(--font-display); font-size: 1rem; filter: url(#df-light); }
+        .trail-difficulty { display: inline-block; font-family: var(--font-mono); font-size: 0.52rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; margin-top: 4px; }
+        .trail-difficulty.beginner { border: 1px solid #4ade80; color: #4ade80; }
+        .trail-difficulty.moderate { border: 1px solid #facc15; color: #facc15; }
+        .trail-difficulty.hard { border: 1px solid var(--accent); color: var(--accent); }
+
+        .city-pg-tips { background: #080808; padding: 80px; }
+        .city-pg-tips-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 3rem; background: var(--border); }
+        .city-tip { background: #080808; padding: 28px; transition: background 0.3s; }
+        .city-tip:hover { background: rgba(232,59,34,0.04); }
+        .city-tip-num { font-family: var(--font-mono); font-size: 0.55rem; color: var(--accent); letter-spacing: 0.18em; margin-bottom: 1rem; }
+        .city-tip-title { font-family: var(--font-display); font-size: 1rem; text-transform: uppercase; filter: url(#df-light); margin-bottom: 0.6rem; }
+        .city-tip-body { font-size: 0.88rem; line-height: 1.65; color: #bbb; }
+
+        @media (max-width: 768px) {
+            .city-pg-hero { padding: 120px 20px 60px; }
+            .city-pg-meta { gap: 1.5rem; }
+            .city-pg-intro { padding: 60px 20px; grid-template-columns: 1fr; gap: 2rem; }
+            .city-pg-trails { padding: 60px 20px; }
+            .city-pg-trails-header { flex-direction: column; gap: 1rem; align-items: flex-start; }
+            .trail-card { grid-template-columns: 1fr; }
+            .trail-card-stats { flex-direction: row; flex-wrap: wrap; text-align: left; }
+            .trail-stat { text-align: left; }
+            .city-pg-tips { padding: 60px 20px; }
+            .city-pg-tips-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<svg class="svg-filters" aria-hidden="true">
+    <filter id="df-heavy" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="4" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/></filter>
+    <filter id="df-light" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="2" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/></filter>
+</svg>
+<div class="grain" aria-hidden="true"></div>
+<div class="viewport-frame" aria-hidden="true"><div class="fc fc-tl"></div><div class="fc fc-tr"></div><div class="fc fc-bl"></div><div class="fc fc-br"></div></div>
+<nav class="global-nav" aria-label="Main navigation">
+    <div class="sys-data">BMH // SYSTEM V2.4<br>44.5902° N, 104.7146° W</div>
+    <div class="nav-right">
+        <a class="nav-link" href="mind.html">MIND</a>
+        <a class="nav-link" href="city-guides.html">TRAILS</a>
+        <a class="nav-link" href="expeditions.html">EVENTS</a>
+        <a class="nav-link" href="join.html">ROSTER</a>
+        <a class="nav-link" href="sponsors.html" style="color:var(--accent)">PARTNERS</a>
+        <button class="menu-trigger" onclick="openMenu()" aria-label="Open menu">MENU.</button>
+    </div>
+</nav>
+<div id="nav-overlay" role="dialog" aria-modal="true">
+    <button class="overlay-close" onclick="closeMenu()">CLOSE.</button>
+    <a class="overlay-item" href="index.html" onclick="closeMenu()">HOME</a>
+    <a class="overlay-item" href="story.html" onclick="closeMenu()">OUR STORY</a>
+    <a class="overlay-item" href="mind.html" onclick="closeMenu()">MIND &amp; TRAIL</a>
+    <a class="overlay-item" href="city-guides.html" onclick="closeMenu()">CITY GUIDES</a>
+    <a class="overlay-item" href="gear.html" onclick="closeMenu()">GEAR</a>
+    <a class="overlay-item" href="hwb.html" onclick="closeMenu()">HIKING WHILE BLACK</a>
+    <a class="overlay-item" href="stories.html" onclick="closeMenu()">BROTHERHOOD</a>
+    <a class="overlay-item" href="expeditions.html" onclick="closeMenu()">EXPEDITIONS</a>
+    <a class="overlay-item" href="trail-guides.html" onclick="closeMenu()">TRAIL GUIDES</a>
+    <a class="overlay-item" href="join.html" onclick="closeMenu()">JOIN THE ROSTER</a>
+    <a class="overlay-item" href="sponsors.html" onclick="closeMenu()">PARTNERSHIPS</a>
+    <div class="overlay-sys">NO MAN LEFT BEHIND // EST. 2024</div>
+</div>
+<div class="doodle-bar" aria-hidden="true">
+    <svg viewBox="0 0 100 100" class="doodle"><path d="M10,80 L32,35 L48,60 L75,25 L90,80 Z"/><path d="M85,10 L78,20 L86,22 L75,35" stroke-width="2"/></svg>
+    <svg viewBox="0 0 100 100" class="doodle"><circle cx="50" cy="50" r="22"/><path d="M40,60 Q50,70 60,60"/><path d="M50,15 L50,5 M15,50 L5,50 M85,50 L95,50 M50,85 L50,95"/></svg>
+    <svg viewBox="0 0 100 100" class="doodle"><path d="M15,25 Q50,20 85,25 L95,40 L80,55 Q45,60 10,55 L5,40 Z"/><path d="M50,55 L50,95"/></svg>
+</div>
+
+<div class="city-pg-hero">
+    <a href="city-guides.html" class="city-pg-back"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg> All Cities</a>
+    <div class="city-pg-tag">NYC // 04 // NORTHEAST</div>
+    <h1 class="city-pg-title">NEW<br>YORK.</h1>
+    <div class="city-pg-meta">
+        <div class="city-pg-meta-item"><span class="city-pg-meta-label">Trails Mapped</span><span class="city-pg-meta-value">22</span></div>
+        <div class="city-pg-meta-item"><span class="city-pg-meta-label">Nearest Mountains</span><span class="city-pg-meta-value">Catskills / Shawangunks</span></div>
+        <div class="city-pg-meta-item"><span class="city-pg-meta-label">Best Season</span><span class="city-pg-meta-value">Apr – Nov</span></div>
+        <div class="city-pg-meta-item"><span class="city-pg-meta-label">BMH Chapter</span><span class="city-pg-meta-value">Active</span></div>
+    </div>
+</div>
+
+<div class="city-pg-intro">
+    <div>
+        <h2 class="city-pg-intro-title reveal">THE CONCRETE JUNGLE HAS EXITS.</h2>
+        <p class="city-pg-intro-body reveal">New York is surrounded by world-class hiking on all sides. The Hudson Valley, Catskill Mountains, Shawangunk Ridge, and Harriman State Park are all within two hours of Manhattan. For city hikers, the access is unmatched — grab a train out of Penn Station and be on a trailhead within 90 minutes. Breakneck Ridge alone draws thousands every weekend. And when the leaf color peaks in October, the Hudson Valley is one of the most beautiful places on earth.</p>
+    </div>
+    <div class="reveal">
+        <div class="mission-callout">NYC PRO TIP: Breakneck Ridge is always crowded on weekends. Take the 7:15am train from Grand Central to get ahead of the rush. For quieter alternatives, Harriman State Park has 200+ miles of trail and most New Yorkers don't know half of them.</div>
+    </div>
+</div>
+
+<div class="city-pg-trails">
+    <div class="city-pg-trails-header">
+        <div>
+            <div class="section-tag">// TOP TRAILS</div>
+            <h2 class="section-title reveal" style="font-size:clamp(2rem,4vw,3.5rem)">WHERE TO LACE UP.</h2>
+        </div>
+        <div class="sys-data">22 TRAILS MAPPED<br>NYC CHAPTER VERIFIED</div>
+    </div>
+
+    <div class="trail-card reveal">
+        <div>
+            <div class="trail-card-name">Breakneck Ridge</div>
+            <div class="trail-card-loc">Cold Spring, NY // 1.5 hrs from NYC</div>
+            <p class="trail-card-desc">The most popular hike from New York City — and for good reason. The scramble up Breakneck Ridge is immediately technical, offering hand-over-foot climbing from the moment you leave the train platform. Hudson River views at every turn. The full loop via Wilkinson Memorial Trail keeps the elevation rolling. This is where BMH built its NYC reputation.</p>
+            <div class="trail-card-tags"><span class="trail-card-tag">SCRAMBLE</span><span class="trail-card-tag">RIVER VIEWS</span><span class="trail-card-tag">TRAIN ACCESS</span><span class="trail-card-tag">ICONIC</span></div>
+        </div>
+        <div class="trail-card-stats">
+            <div class="trail-stat"><span class="trail-stat-label">Distance</span><span class="trail-stat-value">5.5 mi</span></div>
+            <div class="trail-stat"><span class="trail-stat-label">Elevation</span><span class="trail-stat-value">1,260 ft</span></div>
+            <div class="trail-stat"><span class="trail-difficulty hard">Hard</span></div>
+        </div>
+    </div>
+
+    <div class="trail-card reveal">
+        <div>
+            <div class="trail-card-name">Slide Mountain</div>
+            <div class="trail-card-loc">Oliverea, NY // 2.5 hrs from NYC</div>
+            <p class="trail-card-desc">The highest peak in the Catskills at 4,180 feet. The summit forest is Boreal — spruce and balsam fir draped in moss, a completely different ecosystem than you'd find below. John Burroughs, the great American naturalist, is buried near the summit. A serious destination hike that rewards everyone who puts in the miles.</p>
+            <div class="trail-card-tags"><span class="trail-card-tag">CATSKILL HIGH PEAK</span><span class="trail-card-tag">SUMMIT</span><span class="trail-card-tag">BOREAL FOREST</span><span class="trail-card-tag">CHALLENGING</span></div>
+        </div>
+        <div class="trail-card-stats">
+            <div class="trail-stat"><span class="trail-stat-label">Distance</span><span class="trail-stat-value">5.8 mi</span></div>
+            <div class="trail-stat"><span class="trail-stat-label">Elevation</span><span class="trail-stat-value">1,750 ft</span></div>
+            <div class="trail-stat"><span class="trail-difficulty hard">Hard</span></div>
+        </div>
+    </div>
+
+    <div class="trail-card reveal">
+        <div>
+            <div class="trail-card-name">Harriman State Park — Ramapo Torne</div>
+            <div class="trail-card-loc">Tuxedo, NY // 1 hr from NYC</div>
+            <p class="trail-card-desc">Harriman has 200+ miles of trail and most of New York sleeps on it. Ramapo Torne delivers exposed granite ridgeline, sweeping valley views, and near-zero crowds compared to Breakneck. The Suffern–Bear Mountain trail through here is a long-distance gem. Train access from Penn Station makes it car-free for NYC hikers.</p>
+            <div class="trail-card-tags"><span class="trail-card-tag">RIDGELINE</span><span class="trail-card-tag">TRAIN ACCESS</span><span class="trail-card-tag">LOW CROWD</span><span class="trail-card-tag">GRANITE</span></div>
+        </div>
+        <div class="trail-card-stats">
+            <div class="trail-stat"><span class="trail-stat-label">Distance</span><span class="trail-stat-value">4.2 mi</span></div>
+            <div class="trail-stat"><span class="trail-stat-label">Elevation</span><span class="trail-stat-value">900 ft</span></div>
+            <div class="trail-stat"><span class="trail-difficulty moderate">Moderate</span></div>
+        </div>
+    </div>
+
+    <div class="trail-card reveal">
+        <div>
+            <div class="trail-card-name">Mohonk Preserve — Shawangunk Ridge</div>
+            <div class="trail-card-loc">New Paltz, NY // 1.75 hrs from NYC</div>
+            <p class="trail-card-desc">The Shawangunks are a world-class climbing and hiking destination. The carriage roads and footpaths atop the Trapps Cliffs deliver jaw-dropping views across the Hudson Valley. The Sky Top Tower loop is the classic intro. For serious trail time, the Long Path traverses the full ridge. One of the most underrated hiking destinations in the Northeast.</p>
+            <div class="trail-card-tags"><span class="trail-card-tag">RIDGE WALK</span><span class="trail-card-tag">CLIFFS</span><span class="trail-card-tag">HUDSON VALLEY VIEWS</span><span class="trail-card-tag">WORLD CLASS</span></div>
+        </div>
+        <div class="trail-card-stats">
+            <div class="trail-stat"><span class="trail-stat-label">Distance</span><span class="trail-stat-value">6.5 mi</span></div>
+            <div class="trail-stat"><span class="trail-stat-label">Elevation</span><span class="trail-stat-value">600 ft</span></div>
+            <div class="trail-stat"><span class="trail-difficulty moderate">Moderate</span></div>
+        </div>
+    </div>
+</div>
+
+<div class="city-pg-tips">
+    <div class="section-tag">// NYC BROTHERHOOD INTEL</div>
+    <h2 class="section-title reveal" style="font-size:clamp(2rem,4vw,3.5rem);margin-bottom:0">KNOW BEFORE<br>YOU GO.</h2>
+    <div class="city-pg-tips-grid">
+        <div class="city-tip reveal"><div class="city-tip-num">TIP_01</div><div class="city-tip-title">TRAIN ACCESS IS KING</div><p class="city-tip-body">Many of the best NYC-area hikes are Metro-North accessible — Breakneck, Cold Spring, and Harriman are all reachable without a car. The Shawangunk Trailblazers run a shuttle from New Paltz on weekends. No car? No excuse.</p></div>
+        <div class="city-tip reveal reveal-delay-1"><div class="city-tip-num">TIP_02</div><div class="city-tip-title">LEAF SEASON CROWDS</div><p class="city-tip-body">October turns the Hudson Valley into a madhouse. Every trail near the river is packed. Go weekday if you can, or push deeper into the Catskills where the leaf-peepers don't bother driving. Worth it — the color is real.</p></div>
+        <div class="city-tip reveal reveal-delay-2"><div class="city-tip-num">TIP_03</div><div class="city-tip-title">CATSKILL 35 CHALLENGE</div><p class="city-tip-body">The Catskill 3500 Club tracks completion of all 35 Catskill peaks over 3,500 feet. BMH members have been quietly conquering this list. It's a multi-year project and one of the most rewarding things you can do as a Northeast hiker.</p></div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-brand">BLK<span>.</span>MEN<span>.</span>HIKE</div>
+    <div class="footer-links">
+        <a class="footer-link" href="mind.html">MIND &amp; TRAIL</a>
+        <a class="footer-link" href="city-guides.html">CITY GUIDES</a>
+        <a class="footer-link" href="gear.html">GEAR</a>
+        <a class="footer-link" href="stories.html">STORIES</a>
+        <a class="footer-link" href="join.html">ROSTER</a>
+        <a class="footer-link" href="sponsors.html">PARTNERS</a>
+    </div>
+    <div class="footer-sys">EST. 2024 // BUILT BY US. FOR US.<br>BLKMENHIKE.COM // NO MAN LEFT BEHIND</div>
+</footer>
+<script>
+    function openMenu() { document.getElementById('nav-overlay').classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeMenu() { document.getElementById('nav-overlay').classList.remove('open'); document.body.style.overflow = ''; }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+    const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
