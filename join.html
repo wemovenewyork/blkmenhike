@@ -18,6 +18,49 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .pledge-steps { max-width: 900px; margin: 0 auto; padding: 80px 80px 0; }
+        .pledge-steps-label { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.2em; color: var(--accent); text-transform: uppercase; margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem; }
+        .pledge-steps-label::before { content: ''; display: inline-block; width: 24px; height: 1px; background: var(--accent); }
+        .pledge-steps-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.2rem); text-transform: uppercase; filter: url(#df-light); margin-bottom: 3rem; line-height: 1.0; }
+        .pledge-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid var(--border); }
+        .pledge-step { padding: 2rem 1.5rem; border-right: 1px solid var(--border); position: relative; }
+        .pledge-step:last-child { border-right: none; }
+        .pledge-step-num { font-family: var(--font-mono); font-size: 0.55rem; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1.5rem; }
+        .pledge-step-arrow { position: absolute; top: 50%; right: -1px; transform: translateY(-50%); width: 20px; height: 20px; color: var(--accent); font-size: 0.7rem; font-family: var(--font-mono); display: flex; align-items: center; justify-content: center; z-index: 2; }
+        .pledge-step-title { font-family: var(--font-display); font-size: 1.05rem; text-transform: uppercase; filter: url(#df-light); margin-bottom: 0.8rem; line-height: 1.1; }
+        .pledge-step-body { font-size: 0.88rem; line-height: 1.7; color: #999; }
+        .pledge-step-tag { display: inline-block; font-family: var(--font-mono); font-size: 0.48rem; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid var(--accent); color: var(--accent); padding: 3px 8px; margin-top: 1rem; }
+        .chapters-section { padding: 80px 80px 0; max-width: 1100px; margin: 0 auto; }
+        .chapters-label { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.2em; color: var(--accent); text-transform: uppercase; margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem; }
+        .chapters-label::before { content: ''; display: inline-block; width: 24px; height: 1px; background: var(--accent); }
+        .chapters-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.2rem); text-transform: uppercase; filter: url(#df-light); margin-bottom: 3rem; line-height: 1.0; }
+        .chapters-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; border: 1px solid var(--border); }
+        .chapter-card { padding: 2rem 1.5rem; border-right: 1px solid var(--border); }
+        .chapter-card:last-child { border-right: none; }
+        .chapter-card-city { font-family: var(--font-mono); font-size: 0.5rem; letter-spacing: 0.2em; color: var(--accent); text-transform: uppercase; margin-bottom: 1.2rem; }
+        .chapter-card-name { font-family: var(--font-display); font-size: 1rem; text-transform: uppercase; filter: url(#df-light); margin-bottom: 0.3rem; line-height: 1.1; }
+        .chapter-card-title { font-family: var(--font-mono); font-size: 0.52rem; letter-spacing: 0.1em; color: var(--dim); text-transform: uppercase; margin-bottom: 1rem; }
+        .chapter-card-trails { font-size: 0.82rem; line-height: 1.6; color: #888; }
+        .chapter-card-stat { font-family: var(--font-mono); font-size: 0.5rem; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+        .creed-block { margin: 80px 80px 0; padding: 3rem; border: 1px solid var(--border); background: #0a0a0a; position: relative; max-width: 900px; }
+        .creed-block::before { content: 'BMH CREED'; font-family: var(--font-mono); font-size: 0.5rem; letter-spacing: 0.25em; color: var(--accent); position: absolute; top: -0.6rem; left: 2rem; background: #0a0a0a; padding: 0 0.5rem; }
+        .creed-text { font-family: var(--font-display); font-size: clamp(1rem, 1.8vw, 1.3rem); line-height: 1.5; text-transform: uppercase; filter: url(#df-light); color: var(--white); }
+        .creed-attr { font-family: var(--font-mono); font-size: 0.52rem; color: var(--dim); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 1.5rem; }
+        @media (max-width: 900px) {
+            .pledge-steps { padding: 60px 20px 0; }
+            .pledge-grid { grid-template-columns: 1fr 1fr; }
+            .pledge-step { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+            .pledge-step:nth-child(2n) { border-right: none; }
+            .pledge-step:nth-last-child(-n+2) { border-bottom: none; }
+            .chapters-section { padding: 60px 20px 0; }
+            .chapters-grid { grid-template-columns: 1fr 1fr; }
+            .chapter-card { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+            .chapter-card:nth-child(2n) { border-right: none; }
+            .chapter-card:last-child { border-bottom: none; }
+            .creed-block { margin: 60px 20px 0; }
+        }
+    </style>
 </head>
 <body>
 
@@ -88,11 +131,11 @@
                 <div class="join-info reveal">
                     <div class="join-info-item">
                         <h4>WHO THIS IS FOR</h4>
-                        <p>Black men of all experience levels — from never-hiked-a-day to seasoned backcountry. You don't need gear. You don't need experience. You just need to show up.</p>
+                        <p>Black men of all experience levels — never-hiked-a-day to seasoned backcountry. You don't need gear. You don't need experience. You need to be a Black man who is ready to show up for himself and for his brothers.</p>
                     </div>
                     <div class="join-info-item">
-                        <h4>WHAT YOU GET</h4>
-                        <p>Access to local hike groups, city-specific trail guides, the brotherhood network, gear swap programs, and the BLK MEN HIKE monthly field report.</p>
+                        <h4>THE PLEDGE</h4>
+                        <p>When you join the chapter, you pledge one thing: no man left behind. On the trail, that's literal — you don't leave a struggling brother. Off trail, it becomes the foundation of every relationship you build here.</p>
                     </div>
                 </div>
             </div>
@@ -117,6 +160,87 @@
         </div>
     </div>
 </section>
+
+<!-- PLEDGE PROCESS -->
+<div class="pledge-steps">
+    <div class="pledge-steps-label">The Process // How You Cross</div>
+    <h2 class="pledge-steps-title reveal">Four Steps<br>to Crossing.</h2>
+    <div class="pledge-grid">
+        <div class="pledge-step reveal">
+            <div class="pledge-step-num">STEP 01 // SUBMIT</div>
+            <div class="pledge-step-title">Put Your Name on the Roster</div>
+            <p class="pledge-step-body">Fill out the form above. Tell us where you are, where you're starting from. No experience needed. Honesty required.</p>
+            <div class="pledge-step-tag">Entry Point</div>
+        </div>
+        <div class="pledge-step reveal reveal-delay-1">
+            <div class="pledge-step-num">STEP 02 // CONNECT</div>
+            <div class="pledge-step-title">Meet Your Big Brother</div>
+            <p class="pledge-step-body">Your chapter lead matches you with a brother who has been where you are. He answers your questions, walks you through the first steps, and brings you in right.</p>
+            <div class="pledge-step-tag">Big / Little</div>
+        </div>
+        <div class="pledge-step reveal">
+            <div class="pledge-step-num">STEP 03 // SHOW UP</div>
+            <div class="pledge-step-title">First Chapter Hike</div>
+            <p class="pledge-step-body">You show up. You meet the line. You walk with the chapter. It doesn't matter how far or how fast — what matters is that you were there when it counted.</p>
+            <div class="pledge-step-tag">The Line</div>
+        </div>
+        <div class="pledge-step reveal reveal-delay-1">
+            <div class="pledge-step-num">STEP 04 // CROSS</div>
+            <div class="pledge-step-title">Your First Real Trail</div>
+            <p class="pledge-step-body">The crossing is your first significant hike with the chapter — the one that tests you. When you reach the other side, you are no longer a visitor. You are a brother on the line.</p>
+            <div class="pledge-step-tag">Crossed</div>
+        </div>
+    </div>
+</div>
+
+<!-- CHAPTER LEADS -->
+<div class="chapters-section" style="padding-bottom: 0;">
+    <div class="chapters-label">The Chapters // Who Leads the Line</div>
+    <h2 class="chapters-title reveal">Find Your<br>Chapter Lead.</h2>
+    <div class="chapters-grid">
+        <div class="chapter-card reveal">
+            <div class="chapter-card-city">ATL_01 // Atlanta, GA</div>
+            <div class="chapter-card-name">Marcus T.</div>
+            <div class="chapter-card-title">Chapter Lead // ATL</div>
+            <p class="chapter-card-trails">Kennesaw Mountain · Amicalola Falls · Stone Mountain · Tallulah Gorge</p>
+            <div class="chapter-card-stat">47 Brothers Crossed // Est. Jan 2024</div>
+        </div>
+        <div class="chapter-card reveal reveal-delay-1">
+            <div class="chapter-card-city">HOU_01 // Houston, TX</div>
+            <div class="chapter-card-name">Darius B.</div>
+            <div class="chapter-card-title">Chapter Lead // HOU</div>
+            <p class="chapter-card-trails">Big Thicket · Lone Star Trail · Huntsville SP · Lake Houston Wilderness</p>
+            <div class="chapter-card-stat">31 Brothers Crossed // Est. Mar 2024</div>
+        </div>
+        <div class="chapter-card reveal">
+            <div class="chapter-card-city">LAX_01 // Los Angeles, CA</div>
+            <div class="chapter-card-name">Jerome W.</div>
+            <div class="chapter-card-title">Chapter Lead // LA</div>
+            <p class="chapter-card-trails">San Gabriel Mtns · Griffith Observatory · Malibu Creek · Mt. Baldy</p>
+            <div class="chapter-card-stat">39 Brothers Crossed // Est. Feb 2024</div>
+        </div>
+        <div class="chapter-card reveal reveal-delay-1">
+            <div class="chapter-card-city">NYC_01 // New York, NY</div>
+            <div class="chapter-card-name">Terrence A.</div>
+            <div class="chapter-card-title">Chapter Lead // NYC</div>
+            <p class="chapter-card-trails">Breakneck Ridge · Harriman SP · Bear Mountain · Catskill High Peaks</p>
+            <div class="chapter-card-stat">52 Brothers Crossed // Est. Jan 2024</div>
+        </div>
+        <div class="chapter-card reveal">
+            <div class="chapter-card-city">CHI_01 // Chicago, IL</div>
+            <div class="chapter-card-name">Kevin R.</div>
+            <div class="chapter-card-title">Chapter Lead // CHI</div>
+            <p class="chapter-card-trails">Starved Rock · Illinois Beach · North Shore Channel · Waterfall Glen</p>
+            <div class="chapter-card-stat">28 Brothers Crossed // Est. Apr 2024</div>
+        </div>
+    </div>
+</div>
+
+<!-- BMH CREED -->
+<div class="creed-block reveal">
+    <div class="creed-text">We move together or we don't move at all. We carry what we can carry, and we don't let a brother carry alone what two men can bear. We don't quit before the summit and we don't leave the trail without the man we came with. We are not hiking clubs. We are not a moment. We are a line — and the line extends forward.</div>
+    <div class="creed-attr">// The BMH Creed // No Man Left Behind</div>
+</div>
 
 <!-- CONTACT -->
 <section id="contact">
