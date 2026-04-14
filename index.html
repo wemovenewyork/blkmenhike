@@ -139,6 +139,150 @@
     </div>
 </section>
 
+<!-- PHOTO GALLERY -->
+<section id="gallery" style="padding: 80px 0 0; overflow: hidden;">
+    <style>
+        .gallery-header { display: flex; justify-content: space-between; align-items: flex-end; padding: 0 80px 2rem; }
+        .gallery-header-left .section-tag { margin-bottom: 0.5rem; }
+        .gallery-header-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.2rem); text-transform: uppercase; filter: url(#df-light); line-height: 1.0; }
+        .gallery-header-sub { font-family: var(--font-mono); font-size: 0.6rem; color: var(--dim); letter-spacing: 0.12em; text-transform: uppercase; }
+
+        /* EDITORIAL GRID */
+        .gallery-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; grid-template-rows: 360px 240px; gap: 3px; margin: 0; }
+        .gallery-cell { position: relative; overflow: hidden; cursor: pointer; display: block; text-decoration: none; }
+        .gallery-cell-main { grid-row: 1 / 3; }
+        .gallery-cell img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.65) contrast(1.05); transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.5s ease; }
+        .gallery-cell:hover img { transform: scale(1.05); filter: brightness(0.85) contrast(1.1); }
+        .gallery-cell-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(5,5,5,0.9) 0%, rgba(5,5,5,0.1) 50%, transparent 100%); transition: background 0.4s ease; }
+        .gallery-cell:hover .gallery-cell-overlay { background: linear-gradient(to top, rgba(5,5,5,0.95) 0%, rgba(5,5,5,0.3) 60%, transparent 100%); }
+        .gallery-cell-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem; transform: translateY(4px); transition: transform 0.4s ease; }
+        .gallery-cell:hover .gallery-cell-caption { transform: translateY(0); }
+        .gallery-cell-loc { font-family: var(--font-mono); font-size: 0.5rem; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.4rem; }
+        .gallery-cell-title { font-family: var(--font-display); font-size: clamp(0.9rem, 1.5vw, 1.2rem); text-transform: uppercase; filter: url(#df-light); color: var(--white); line-height: 1.1; margin-bottom: 0.5rem; }
+        .gallery-cell-link { font-family: var(--font-mono); font-size: 0.48rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); opacity: 0; transition: opacity 0.3s ease 0.1s; }
+        .gallery-cell:hover .gallery-cell-link { opacity: 1; }
+        .gallery-cell-tag { position: absolute; top: 1rem; right: 1rem; font-family: var(--font-mono); font-size: 0.45rem; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.7); padding: 3px 8px; }
+
+        /* TICKER */
+        .gallery-ticker { margin-top: 3px; overflow: hidden; position: relative; }
+        .gallery-ticker::before, .gallery-ticker::after { content: ''; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2; pointer-events: none; }
+        .gallery-ticker::before { left: 0; background: linear-gradient(to right, var(--black), transparent); }
+        .gallery-ticker::after { right: 0; background: linear-gradient(to left, var(--black), transparent); }
+        .gallery-ticker-track { display: flex; gap: 3px; width: max-content; animation: ticker-scroll 40s linear infinite; }
+        .gallery-ticker-track:hover { animation-play-state: paused; }
+        .gallery-ticker-item { width: 260px; height: 170px; flex-shrink: 0; position: relative; overflow: hidden; cursor: pointer; }
+        .gallery-ticker-item img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6); transition: filter 0.4s ease, transform 0.5s ease; }
+        .gallery-ticker-item:hover img { filter: brightness(0.85); transform: scale(1.06); }
+        .gallery-ticker-label { position: absolute; bottom: 0.8rem; left: 1rem; font-family: var(--font-mono); font-size: 0.45rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.7); }
+        @keyframes ticker-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+        .gallery-footer { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 80px 0; border-top: 1px solid var(--border); margin-top: 3px; }
+        .gallery-count { font-family: var(--font-mono); font-size: 0.55rem; color: var(--dim); letter-spacing: 0.15em; text-transform: uppercase; }
+
+        @media (max-width: 900px) {
+            .gallery-header { padding: 0 20px 1.5rem; }
+            .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 280px 180px 180px; }
+            .gallery-cell-main { grid-row: 1 / 2; grid-column: 1 / 3; }
+            .gallery-ticker-item { width: 200px; height: 130px; }
+            .gallery-footer { padding: 1.5rem 20px 0; }
+        }
+    </style>
+
+    <div class="gallery-header">
+        <div class="gallery-header-left">
+            <div class="section-tag">07 // IN THE FIELD</div>
+            <div class="gallery-header-title reveal">Brothers<br>on the Trail.</div>
+        </div>
+        <div class="reveal" style="text-align:right">
+            <div class="gallery-header-sub">Five chapters. One line.<br>Captured in the field.</div>
+        </div>
+    </div>
+
+    <!-- EDITORIAL GRID -->
+    <div class="gallery-grid">
+        <!-- FEATURE -->
+        <a href="stories.html" class="gallery-cell gallery-cell-main">
+            <img src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?q=80&w=1200&auto=format&fit=crop" alt="Summit silhouette" loading="lazy">
+            <div class="gallery-cell-overlay"></div>
+            <div class="gallery-cell-tag">FEATURED</div>
+            <div class="gallery-cell-caption">
+                <div class="gallery-cell-loc">BMH National // 2026</div>
+                <div class="gallery-cell-title">The Summit<br>Belongs to Us.</div>
+                <div class="gallery-cell-link">Read Brotherhood Stories →</div>
+            </div>
+        </a>
+        <!-- TOP RIGHT -->
+        <a href="city-newyork.html" class="gallery-cell">
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=800&auto=format&fit=crop" alt="Mountain ridge" loading="lazy">
+            <div class="gallery-cell-overlay"></div>
+            <div class="gallery-cell-caption">
+                <div class="gallery-cell-loc">NYC Chapter // Breakneck Ridge</div>
+                <div class="gallery-cell-title">The Scramble.</div>
+                <div class="gallery-cell-link">NYC Trail Guide →</div>
+            </div>
+        </a>
+        <a href="city-atlanta.html" class="gallery-cell">
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=800&auto=format&fit=crop" alt="Forest trail" loading="lazy">
+            <div class="gallery-cell-overlay"></div>
+            <div class="gallery-cell-caption">
+                <div class="gallery-cell-loc">ATL Chapter // Amicalola Falls</div>
+                <div class="gallery-cell-title">Into the Trees.</div>
+                <div class="gallery-cell-link">ATL Trail Guide →</div>
+            </div>
+        </a>
+        <!-- BOTTOM RIGHT -->
+        <a href="city-houston.html" class="gallery-cell">
+            <img src="https://images.unsplash.com/photo-1469521669194-babb45599def?q=80&w=800&auto=format&fit=crop" alt="Trail through forest" loading="lazy">
+            <div class="gallery-cell-overlay"></div>
+            <div class="gallery-cell-caption">
+                <div class="gallery-cell-loc">HOU Chapter // Big Thicket</div>
+                <div class="gallery-cell-title">Deep South Trail.</div>
+                <div class="gallery-cell-link">HOU Trail Guide →</div>
+            </div>
+        </a>
+        <a href="city-losangeles.html" class="gallery-cell">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=800&auto=format&fit=crop" alt="Mountain fog" loading="lazy">
+            <div class="gallery-cell-overlay"></div>
+            <div class="gallery-cell-caption">
+                <div class="gallery-cell-loc">LA Chapter // San Gabriel Mtns</div>
+                <div class="gallery-cell-title">Above the Smog.</div>
+                <div class="gallery-cell-link">LA Trail Guide →</div>
+            </div>
+        </a>
+    </div>
+
+    <!-- AUTO-SCROLL TICKER -->
+    <div class="gallery-ticker">
+        <div class="gallery-ticker-track">
+            <!-- Set 1 -->
+            <a href="mind.html" class="gallery-ticker-item"><img src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?q=80&w=600&auto=format&fit=crop" alt="Mountain landscape" loading="lazy"><div class="gallery-ticker-label">MIND &amp; TRAIL</div></a>
+            <a href="stories.html" class="gallery-ticker-item"><img src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=80&w=600&auto=format&fit=crop" alt="Mountain peaks" loading="lazy"><div class="gallery-ticker-label">BROTHERHOOD</div></a>
+            <a href="expeditions.html" class="gallery-ticker-item"><img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=600&auto=format&fit=crop" alt="Mountain night" loading="lazy"><div class="gallery-ticker-label">EXPEDITIONS</div></a>
+            <a href="city-chicago.html" class="gallery-ticker-item"><img src="https://images.unsplash.com/photo-1475483768296-6163e08872a1?q=80&w=600&auto=format&fit=crop" alt="Mountain lake" loading="lazy"><div class="gallery-ticker-label">CHI CHAPTER</div></a>
+            <a href="hwb.html" class="gallery-ticker-item"><img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?q=80&w=600&auto=format&fit=crop" alt="Forest path" loading="lazy"><div class="gallery-ticker-label">HIKING WHILE BLACK</div></a>
+            <a href="field-reports.html" class="gallery-ticker-item"><img src="https://images.unsplash.com/photo-1522163182402-834f871fd851?q=80&w=600&auto=format&fit=crop" alt="Rocky mountain" loading="lazy"><div class="gallery-ticker-label">FIELD REPORTS</div></a>
+            <a href="join.html" class="gallery-ticker-item"><img src="https://images.unsplash.com/photo-1544198365-f5d60b6d8190?q=80&w=600&auto=format&fit=crop" alt="Trail" loading="lazy"><div class="gallery-ticker-label">JOIN THE ROSTER</div></a>
+            <a href="gear.html" class="gallery-ticker-item"><img src="https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=600&auto=format&fit=crop" alt="Forest trail" loading="lazy"><div class="gallery-ticker-label">GEAR</div></a>
+            <!-- Set 2 (duplicate for seamless loop) -->
+            <a href="mind.html" class="gallery-ticker-item"><img src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?q=80&w=600&auto=format&fit=crop" alt="Mountain landscape" loading="lazy"><div class="gallery-ticker-label">MIND &amp; TRAIL</div></a>
+            <a href="stories.html" class="gallery-ticker-item"><img src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=80&w=600&auto=format&fit=crop" alt="Mountain peaks" loading="lazy"><div class="gallery-ticker-label">BROTHERHOOD</div></a>
+            <a href="expeditions.html" class="gallery-ticker-item"><img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=600&auto=format&fit=crop" alt="Mountain night" loading="lazy"><div class="gallery-ticker-label">EXPEDITIONS</div></a>
+            <a href="city-chicago.html" class="gallery-ticker-item"><img src="https://images.unsplash.com/photo-1475483768296-6163e08872a1?q=80&w=600&auto=format&fit=crop" alt="Mountain lake" loading="lazy"><div class="gallery-ticker-label">CHI CHAPTER</div></a>
+            <a href="hwb.html" class="gallery-ticker-item"><img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?q=80&w=600&auto=format&fit=crop" alt="Forest path" loading="lazy"><div class="gallery-ticker-label">HIKING WHILE BLACK</div></a>
+            <a href="field-reports.html" class="gallery-ticker-item"><img src="https://images.unsplash.com/photo-1522163182402-834f871fd851?q=80&w=600&auto=format&fit=crop" alt="Rocky mountain" loading="lazy"><div class="gallery-ticker-label">FIELD REPORTS</div></a>
+            <a href="join.html" class="gallery-ticker-item"><img src="https://images.unsplash.com/photo-1544198365-f5d60b6d8190?q=80&w=600&auto=format&fit=crop" alt="Trail" loading="lazy"><div class="gallery-ticker-label">JOIN THE ROSTER</div></a>
+            <a href="gear.html" class="gallery-ticker-item"><img src="https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=600&auto=format&fit=crop" alt="Forest trail" loading="lazy"><div class="gallery-ticker-label">GEAR</div></a>
+        </div>
+    </div>
+
+    <div class="gallery-footer">
+        <div class="gallery-count">197 BROTHERS // 5 CHAPTERS // EST. 2024</div>
+        <a href="stories.html" class="article-back" style="margin-bottom:0;display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--font-mono);font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--dim);text-decoration:none">
+            ALL BROTHERHOOD STORIES →
+        </a>
+    </div>
+</section>
+
 <footer>
     <div class="footer-brand">BLK<span>.</span>MEN<span>.</span>HIKE</div>
     <div class="footer-links">
