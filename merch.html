@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BLK MEN HIKE official merch. The patch. The tee. The hoodie. Built for brothers on the trail.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="BLK MEN HIKE">
+    <meta property="og:url" content="https://blkmenhike.vercel.app/merch.html">
+    <meta property="og:title" content="Merch // BLK MEN HIKE">
+    <meta property="og:description" content="BLK MEN HIKE official merch. The patch. The tee. The hoodie. Built for brothers on the trail.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=1200&auto=format&fit=crop">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Merch // BLK MEN HIKE">
+    <meta name="twitter:description" content="BLK MEN HIKE official merch. The patch. The tee. The hoodie. Built for brothers on the trail.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=1200&auto=format&fit=crop">
+    <title>Merch // BLK MEN HIKE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .merch-hero { padding: calc(var(--frame-pad) + 120px) 80px 80px; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .merch-hero-kicker { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.25em; color: var(--accent); text-transform: uppercase; margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; }
+        .merch-hero-kicker::before { content: ''; display: inline-block; width: 30px; height: 2px; background: var(--accent); }
+        .merch-hero-title { font-family: var(--font-display); font-size: clamp(3.5rem, 7vw, 7rem); line-height: 0.85; text-transform: uppercase; filter: url(#df-heavy); margin-bottom: 1.5rem; }
+        .merch-hero-sub { font-size: 1rem; line-height: 1.8; color: #aaa; max-width: 420px; margin-bottom: 2rem; }
+        .merch-hero-patch { display: flex; justify-content: center; align-items: center; position: relative; }
+        .merch-hero-patch img { width: 340px; height: auto; filter: drop-shadow(0 0 40px rgba(232,59,34,0.25)); transition: transform 0.5s ease, filter 0.5s ease; }
+        .merch-hero-patch img:hover { transform: scale(1.04) rotate(1deg); filter: drop-shadow(0 0 60px rgba(232,59,34,0.4)); }
+        .merch-hero-badge { position: absolute; top: 0; right: 20px; font-family: var(--font-mono); font-size: 0.48rem; letter-spacing: 0.2em; text-transform: uppercase; border: 1px solid var(--accent); color: var(--accent); padding: 4px 10px; }
+
+        .merch-section { padding: 80px 80px 0; }
+        .merch-section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+        .merch-section-title { font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 3rem); text-transform: uppercase; filter: url(#df-light); line-height: 1.0; }
+        .merch-section-sub { font-family: var(--font-mono); font-size: 0.55rem; color: var(--dim); letter-spacing: 0.12em; text-transform: uppercase; text-align: right; }
+
+        .merch-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+        .merch-card { background: #0a0a0a; border: 1px solid var(--border); position: relative; overflow: hidden; }
+        .merch-card-img { width: 100%; aspect-ratio: 1; object-fit: cover; filter: brightness(0.75) contrast(1.1); transition: filter 0.4s ease, transform 0.5s ease; display: block; }
+        .merch-card:hover .merch-card-img { filter: brightness(0.9) contrast(1.1); transform: scale(1.03); }
+        .merch-card-img-wrap { overflow: hidden; position: relative; }
+        .merch-card-patch-wrap { overflow: hidden; position: relative; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; background: #0d0d0d; }
+        .merch-card-patch-wrap img { width: 65%; height: auto; transition: transform 0.5s ease; filter: drop-shadow(0 0 20px rgba(232,59,34,0.2)); }
+        .merch-card:hover .merch-card-patch-wrap img { transform: scale(1.08) rotate(2deg); }
+        .merch-card-tag { position: absolute; top: 1rem; left: 1rem; font-family: var(--font-mono); font-size: 0.45rem; letter-spacing: 0.15em; text-transform: uppercase; background: var(--accent); color: var(--white); padding: 3px 8px; }
+        .merch-card-body { padding: 1.5rem; }
+        .merch-card-num { font-family: var(--font-mono); font-size: 0.48rem; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.5rem; }
+        .merch-card-name { font-family: var(--font-display); font-size: 1.1rem; text-transform: uppercase; filter: url(#df-light); margin-bottom: 0.4rem; line-height: 1.0; }
+        .merch-card-desc { font-size: 0.85rem; line-height: 1.65; color: #888; margin-bottom: 1.2rem; }
+        .merch-card-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid var(--border); }
+        .merch-card-price { font-family: var(--font-display); font-size: 1.1rem; color: var(--white); filter: url(#df-light); }
+        .merch-card-price span { font-family: var(--font-mono); font-size: 0.5rem; color: var(--dim); display: block; text-transform: uppercase; letter-spacing: 0.1em; }
+        .merch-card-btn { font-family: var(--font-mono); font-size: 0.5rem; letter-spacing: 0.15em; text-transform: uppercase; border: 1px solid var(--accent); color: var(--accent); padding: 6px 14px; text-decoration: none; transition: background 0.2s, color 0.2s; cursor: pointer; background: transparent; }
+        .merch-card-btn:hover { background: var(--accent); color: var(--white); }
+
+        .merch-notify { margin: 80px 80px 0; padding: 3rem; border: 1px solid var(--border); background: #0a0a0a; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; position: relative; }
+        .merch-notify::before { content: 'DROP ALERT'; font-family: var(--font-mono); font-size: 0.48rem; letter-spacing: 0.25em; color: var(--accent); position: absolute; top: -0.6rem; left: 2rem; background: #0a0a0a; padding: 0 0.5rem; }
+        .merch-notify-title { font-family: var(--font-display); font-size: clamp(1.5rem, 2.5vw, 2.2rem); text-transform: uppercase; filter: url(#df-light); margin-bottom: 0.8rem; line-height: 1.0; }
+        .merch-notify-sub { font-size: 0.92rem; line-height: 1.75; color: #888; }
+        .merch-notify-form { display: flex; flex-direction: column; gap: 1rem; }
+        .merch-notify-form input { background: transparent; border: 1px solid var(--border); color: var(--white); font-family: var(--font-mono); font-size: 0.72rem; padding: 0.8rem 1rem; letter-spacing: 0.08em; outline: none; transition: border-color 0.2s; }
+        .merch-notify-form input:focus { border-color: var(--accent); }
+        .merch-notify-form input::placeholder { color: var(--dim); }
+
+        .merch-bottom { padding: 80px 80px 120px; }
+
+        @media (max-width: 900px) {
+            .merch-hero { grid-template-columns: 1fr; padding: calc(var(--frame-pad) + 100px) 20px 60px; gap: 2.5rem; }
+            .merch-hero-patch img { width: 240px; }
+            .merch-section { padding: 60px 20px 0; }
+            .merch-grid { grid-template-columns: 1fr; }
+            .merch-notify { grid-template-columns: 1fr; padding: 2rem; margin: 60px 20px 0; }
+            .merch-bottom { padding: 60px 20px 80px; }
+        }
+    </style>
+</head>
+<body>
+<svg class="svg-filters" aria-hidden="true">
+    <filter id="df-heavy" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="4" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/></filter>
+    <filter id="df-light" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="2" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/></filter>
+</svg>
+<div class="grain" aria-hidden="true"></div>
+<div class="viewport-frame" aria-hidden="true"><div class="fc fc-tl"></div><div class="fc fc-tr"></div><div class="fc fc-bl"></div><div class="fc fc-br"></div></div>
+
+<nav class="global-nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo" aria-label="BLK MEN HIKE Home"><img src="logo-patch.png" alt="BLK MEN HIKE" class="nav-logo-img"></a>
+    <div class="nav-right">
+        <a class="nav-link" href="mind.html">MIND</a>
+        <a class="nav-link" href="city-guides.html">TRAILS</a>
+        <a class="nav-link" href="expeditions.html">EVENTS</a>
+        <a class="nav-link" href="join.html">ROSTER</a>
+        <a class="nav-link" href="merch.html" style="color:var(--accent)">MERCH</a>
+        <button class="menu-trigger" onclick="openMenu()" aria-label="Open menu">MENU.</button>
+    </div>
+</nav>
+
+<div id="nav-overlay" role="dialog" aria-modal="true">
+    <button class="overlay-close" onclick="closeMenu()">CLOSE.</button>
+    <a class="overlay-item" href="index.html" onclick="closeMenu()">HOME</a>
+    <a class="overlay-item" href="story.html" onclick="closeMenu()">OUR STORY</a>
+    <a class="overlay-item" href="brotherhood.html" onclick="closeMenu()">THE BROTHERHOOD</a>
+    <a class="overlay-item" href="mind.html" onclick="closeMenu()">MIND &amp; TRAIL</a>
+    <a class="overlay-item" href="city-guides.html" onclick="closeMenu()">CITY GUIDES</a>
+    <a class="overlay-item" href="gear.html" onclick="closeMenu()">GEAR</a>
+    <a class="overlay-item" href="hwb.html" onclick="closeMenu()">HIKING WHILE BLACK</a>
+    <a class="overlay-item" href="stories.html" onclick="closeMenu()">BROTHERHOOD STORIES</a>
+    <a class="overlay-item" href="expeditions.html" onclick="closeMenu()">EXPEDITIONS</a>
+    <a class="overlay-item" href="trail-guides.html" onclick="closeMenu()">TRAIL GUIDES</a>
+    <a class="overlay-item" href="field-reports.html" onclick="closeMenu()">FIELD REPORTS</a>
+    <a class="overlay-item" href="merch.html" onclick="closeMenu()">MERCH</a>
+    <a class="overlay-item" href="merch.html" onclick="closeMenu()">MERCH</a>
+    <a class="overlay-item" href="join.html" onclick="closeMenu()">JOIN THE ROSTER</a>
+    <a class="overlay-item" href="sponsors.html" onclick="closeMenu()">PARTNERSHIPS</a>
+    <div class="overlay-sys">NO MAN LEFT BEHIND // EST. 2024</div>
+</div>
+
+<div class="doodle-bar" aria-hidden="true">
+    <svg viewBox="0 0 100 100" class="doodle"><path d="M10,80 L32,35 L48,60 L75,25 L90,80 Z"/><path d="M85,10 L78,20 L86,22 L75,35" stroke-width="2"/></svg>
+    <svg viewBox="0 0 100 100" class="doodle"><circle cx="50" cy="50" r="22"/><path d="M40,60 Q50,70 60,60"/><path d="M50,15 L50,5 M15,50 L5,50 M85,50 L95,50 M50,85 L50,95"/></svg>
+    <svg viewBox="0 0 100 100" class="doodle"><path d="M15,25 Q50,20 85,25 L95,40 L80,55 Q45,60 10,55 L5,40 Z"/><path d="M50,55 L50,95"/></svg>
+</div>
+
+<!-- HERO -->
+<div class="merch-hero">
+    <div>
+        <div class="merch-hero-kicker">BMH // Official Merch // Est. 2024</div>
+        <h1 class="merch-hero-title">WEAR<br>THE<br>LINE.</h1>
+        <p class="merch-hero-sub">Every piece is built for brothers on the trail. No man left behind — on the mountain or off it. Gear that means something because the people wearing it mean something.</p>
+        <a href="#products" class="btn-rough">
+            <svg viewBox="0 0 200 60" preserveAspectRatio="none"><path d="M4,6 L196,4 L192,54 L8,56 Z" vector-effect="non-scaling-stroke"/></svg>
+            Shop the Drop
+        </a>
+    </div>
+    <div class="merch-hero-patch">
+        <div class="merch-hero-badge">FIRST EDITION</div>
+        <img src="logo-patch.png" alt="BLK MEN HIKE Patch">
+    </div>
+</div>
+
+<!-- PRODUCTS -->
+<div class="merch-section" id="products">
+    <div class="merch-section-header">
+        <div>
+            <div class="section-tag">BMH // THE DROP</div>
+            <div class="merch-section-title reveal">First Edition<br>Collection.</div>
+        </div>
+        <div class="merch-section-sub reveal">Limited run.<br>No restocks.</div>
+    </div>
+
+    <div class="merch-grid">
+        <!-- PATCH -->
+        <div class="merch-card reveal">
+            <div class="merch-card-patch-wrap">
+                <div class="merch-card-tag">HERO ITEM</div>
+                <img src="logo-patch.png" alt="BMH Morale Patch">
+            </div>
+            <div class="merch-card-body">
+                <div class="merch-card-num">ITEM_001 // LIMITED</div>
+                <div class="merch-card-name">BMH Morale Patch</div>
+                <p class="merch-card-desc">The official BLK MEN HIKE hexagonal embroidered patch. Merrowed red border, black background, white mountain ridge. Built for jackets, packs, and hats. First edition — no restocks.</p>
+                <div class="merch-card-footer">
+                    <div class="merch-card-price">$18<span>+ shipping</span></div>
+                    <a href="#notify" class="merch-card-btn">GET NOTIFIED</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- TEE -->
+        <div class="merch-card reveal reveal-delay-1">
+            <div class="merch-card-img-wrap">
+                <div class="merch-card-tag">DROPPING SOON</div>
+                <img class="merch-card-img" src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=800&auto=format&fit=crop" alt="BMH Trail Tee">
+            </div>
+            <div class="merch-card-body">
+                <div class="merch-card-num">ITEM_002 // APPAREL</div>
+                <div class="merch-card-name">BMH Trail Tee</div>
+                <p class="merch-card-desc">Black heavyweight tee. BMH patch graphic on the chest, "NO MAN LEFT BEHIND" on the back. 100% cotton. Built to move on the trail and hold up off it.</p>
+                <div class="merch-card-footer">
+                    <div class="merch-card-price">$38<span>sizes S–3XL</span></div>
+                    <a href="#notify" class="merch-card-btn">GET NOTIFIED</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- HOODIE -->
+        <div class="merch-card reveal reveal-delay-2">
+            <div class="merch-card-img-wrap">
+                <div class="merch-card-tag">DROPPING SOON</div>
+                <img class="merch-card-img" src="https://images.unsplash.com/photo-1556821840-3a63f15732ce?q=80&w=800&auto=format&fit=crop" alt="BMH Chapter Hoodie">
+            </div>
+            <div class="merch-card-body">
+                <div class="merch-card-num">ITEM_003 // APPAREL</div>
+                <div class="merch-card-name">BMH Chapter Hoodie</div>
+                <p class="merch-card-desc">Heavyweight pullover. Your chapter designation on the sleeve, BMH crest on the chest. Black on black with red accent. The hoodie you wear to the trailhead at 5am.</p>
+                <div class="merch-card-footer">
+                    <div class="merch-card-price">$72<span>sizes S–3XL</span></div>
+                    <a href="#notify" class="merch-card-btn">GET NOTIFIED</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- HAT -->
+        <div class="merch-card reveal">
+            <div class="merch-card-img-wrap">
+                <div class="merch-card-tag">DROPPING SOON</div>
+                <img class="merch-card-img" src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?q=80&w=800&auto=format&fit=crop" alt="BMH Trail Cap">
+            </div>
+            <div class="merch-card-body">
+                <div class="merch-card-num">ITEM_004 // HEADWEAR</div>
+                <div class="merch-card-name">BMH Trail Cap</div>
+                <p class="merch-card-desc">Structured snapback. Black with red underbrim. BMH embroidered logo front, "EST. 2024" hit on the back strap. The hat brothers wear when the trail is done and the day isn't.</p>
+                <div class="merch-card-footer">
+                    <div class="merch-card-price">$42<span>one size</span></div>
+                    <a href="#notify" class="merch-card-btn">GET NOTIFIED</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- WATER BOTTLE -->
+        <div class="merch-card reveal reveal-delay-1">
+            <div class="merch-card-img-wrap">
+                <div class="merch-card-tag">DROPPING SOON</div>
+                <img class="merch-card-img" src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?q=80&w=800&auto=format&fit=crop" alt="BMH Trail Bottle">
+            </div>
+            <div class="merch-card-body">
+                <div class="merch-card-num">ITEM_005 // GEAR</div>
+                <div class="merch-card-name">BMH Trail Bottle</div>
+                <p class="merch-card-desc">32oz insulated stainless. Matte black with BMH patch decal. Keeps cold for 24 hours. The one thing you don't leave at the trailhead.</p>
+                <div class="merch-card-footer">
+                    <div class="merch-card-price">$45<span>32oz</span></div>
+                    <a href="#notify" class="merch-card-btn">GET NOTIFIED</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- STICKER PACK -->
+        <div class="merch-card reveal reveal-delay-2">
+            <div class="merch-card-patch-wrap" style="background:#111">
+                <div class="merch-card-tag">IN STOCK</div>
+                <img src="logo-patch.png" alt="BMH Sticker Pack" style="width:55%">
+            </div>
+            <div class="merch-card-body">
+                <div class="merch-card-num">ITEM_006 // ACCESSORIES</div>
+                <div class="merch-card-name">BMH Sticker Pack</div>
+                <p class="merch-card-desc">5-pack. Die-cut vinyl stickers built for water bottles, laptop lids, and pack straps. BMH logo, "NO MAN LEFT BEHIND," mountain ridge, coordinates, and EST. 2024 lockup.</p>
+                <div class="merch-card-footer">
+                    <div class="merch-card-price">$12<span>5-pack</span></div>
+                    <a href="#notify" class="merch-card-btn">GET NOTIFIED</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- NOTIFY -->
+<div class="merch-notify reveal" id="notify">
+    <div>
+        <div class="merch-notify-title">Be First<br>on the Drop.</div>
+        <p class="merch-notify-sub">First edition runs are limited. No restocks. Drop your name and email and you'll hear first when inventory goes live — before we announce anywhere else.</p>
+    </div>
+    <div class="merch-notify-form">
+        <input type="text" placeholder="FULL NAME">
+        <input type="email" placeholder="EMAIL ADDRESS">
+        <input type="text" placeholder="CITY, STATE">
+        <button class="form-submit" style="width:100%">
+            <svg viewBox="0 0 400 70" preserveAspectRatio="none"><path d="M4,10 L395,4 L388,62 L12,66 Z" vector-effect="non-scaling-stroke" stroke-linejoin="round"/></svg>
+            NOTIFY ME ON DROP
+        </button>
+    </div>
+</div>
+
+<div class="merch-bottom">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding-top:2rem;border-top:1px solid var(--border)">
+        <div style="display:flex;gap:3rem">
+            <div><div class="meta-label">STATUS</div><div class="meta-value">FIRST EDITION</div></div>
+            <div><div class="meta-label">RUNS</div><div class="meta-value">LIMITED</div></div>
+            <div><div class="meta-label">RESTOCKS</div><div class="meta-value">NONE</div></div>
+        </div>
+        <div class="sys-data" style="text-align:right">BUILT BY US. FOR US.<br>NO MAN LEFT BEHIND.</div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-brand">BLK<span>.</span>MEN<span>.</span>HIKE</div>
+    <div class="footer-links">
+        <a class="footer-link" href="mind.html">MIND &amp; TRAIL</a>
+        <a class="footer-link" href="city-guides.html">CITY GUIDES</a>
+        <a class="footer-link" href="stories.html">STORIES</a>
+        <a class="footer-link" href="merch.html">MERCH</a>
+        <a class="footer-link" href="join.html">ROSTER</a>
+    </div>
+    <div class="footer-sys">EST. 2024 // BUILT BY US. FOR US.<br>BLKMENHIKE.COM // NO MAN LEFT BEHIND</div>
+</footer>
+
+<script>
+    function openMenu() { document.getElementById('nav-overlay').classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeMenu() { document.getElementById('nav-overlay').classList.remove('open'); document.body.style.overflow = ''; }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
