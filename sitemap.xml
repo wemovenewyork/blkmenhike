@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://blkmenhike.vercel.app/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://blkmenhike.vercel.app/story.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://blkmenhike.vercel.app/mind.html</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://blkmenhike.vercel.app/hwb.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://blkmenhike.vercel.app/city-guides.html</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://blkmenhike.vercel.app/city-atlanta.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://blkmenhike.vercel.app/city-houston.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://blkmenhike.vercel.app/city-losangeles.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://blkmenhike.vercel.app/city-newyork.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://blkmenhike.vercel.app/city-chicago.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://blkmenhike.vercel.app/gear.html</loc><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://blkmenhike.vercel.app/stories.html</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://blkmenhike.vercel.app/expeditions.html</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://blkmenhike.vercel.app/trail-guides.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://blkmenhike.vercel.app/field-reports.html</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://blkmenhike.vercel.app/report-breakneck.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://blkmenhike.vercel.app/report-stone-mountain.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://blkmenhike.vercel.app/report-big-thicket.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://blkmenhike.vercel.app/talon-wilson.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://blkmenhike.vercel.app/join.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://blkmenhike.vercel.app/sponsors.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+</urlset>
