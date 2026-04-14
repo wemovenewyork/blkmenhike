@@ -344,3 +344,103 @@ footer { background: #030303; border-top: 1px solid var(--border); padding: 60px
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ── MOBILE ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    :root { --frame-pad: 12px; }
+
+    /* Nav */
+    .global-nav { left: calc(var(--frame-pad) + 16px); right: calc(var(--frame-pad) + 16px); top: calc(var(--frame-pad) + 14px); }
+    .nav-right .nav-link { display: none; }
+    .sys-data { font-size: 0.55rem; }
+
+    /* Doodle bar — hide on mobile, too cramped */
+    .doodle-bar { display: none; }
+
+    /* Inner padding */
+    .inner { padding: 0 20px; }
+
+    /* Hero */
+    #hero .inner { padding-top: calc(var(--frame-pad) + 60px); padding-bottom: calc(var(--frame-pad) + 30px); }
+    .hero-sub { font-size: 0.95rem; max-width: 100%; }
+    .hero-footer { flex-direction: column; gap: 1.5rem; }
+    .meta-stats { gap: 1.5rem; }
+
+    /* Featured hiker card — stack below hero content instead of floating */
+    .featured-hiker {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        width: 100%;
+        flex-direction: row;
+        margin-top: 1.5rem;
+        align-self: stretch;
+    }
+    .featured-hiker:hover { transform: none; }
+    .featured-hiker-img { width: 90px; height: 110px; flex-shrink: 0; }
+    .featured-hiker-badge { writing-mode: vertical-rl; text-orientation: mixed; padding: 10px 6px; width: auto; }
+    .featured-hiker-name { font-size: 1.1rem; }
+
+    /* Manifesto */
+    #manifesto { grid-template-columns: 1fr; gap: 2rem; padding: 60px 20px; }
+
+    /* Story */
+    .story-grid { grid-template-columns: 1fr; gap: 2rem; }
+    #story .inner { padding-top: 80px; padding-bottom: 60px; padding-left: 20px; padding-right: 20px; }
+    .story-stats { grid-template-columns: repeat(3,1fr); gap: 1rem; }
+
+    /* Mental health */
+    #mental-health { padding: 80px 20px; }
+    .mh-header { grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 40px; }
+    .mh-cards { grid-template-columns: 1fr; gap: 2px; }
+    .mh-quote { padding: 40px 24px; margin-top: 40px; }
+    .mh-quote-mark { font-size: 5rem; top: 20px; left: 20px; }
+
+    /* City guides */
+    #city-guides { padding: 80px 20px; }
+    .city-header { flex-direction: column; gap: 1rem; align-items: flex-start; }
+    .city-grid { grid-template-columns: 1fr 1fr; }
+
+    /* Gear */
+    #gear { padding: 80px 20px; }
+    .gear-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .gear-sidebar { position: static; }
+    .gear-item { grid-template-columns: 60px 1fr auto; gap: 12px; }
+
+    /* HWB */
+    #hwb .inner { padding-left: 20px; padding-right: 20px; }
+    .hwb-content { max-width: 100%; }
+
+    /* Stories */
+    #stories { padding: 80px 20px; }
+    .stories-header { flex-direction: column; gap: 1.5rem; align-items: flex-start; }
+    .stories-grid { grid-template-columns: 1fr; }
+
+    /* Expeditions */
+    #expeditions { padding: 80px 20px; }
+    .exp-header { flex-direction: column; gap: 1rem; align-items: flex-start; }
+    .exp-grid { grid-template-columns: 1fr; }
+
+    /* Trail guides */
+    #trail-guides { padding: 80px 20px; }
+    .guides-header { flex-direction: column; gap: 1.5rem; align-items: flex-start; }
+    .guides-grid { grid-template-columns: 1fr; }
+    .filter-row { flex-wrap: wrap; }
+
+    /* Join */
+    #join .inner { padding-left: 20px; padding-right: 20px; }
+    .join-grid { grid-template-columns: 1fr; gap: 3rem; }
+
+    /* Contact */
+    #contact { padding: 80px 20px; }
+    .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+
+    /* Footer */
+    footer { padding: 40px 20px; flex-direction: column; gap: 1.5rem; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+    .footer-sys { text-align: center; }
+
+    /* Overlay close button */
+    .overlay-close { right: 30px; top: 40px; }
+}
