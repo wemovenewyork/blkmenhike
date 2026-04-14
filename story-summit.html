@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Marcus hadn't talked to another man about grief in 12 years. Then he crossed 14,000 feet with his line brothers and couldn't stop. Sometimes altitude does what therapy can't.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="BLK MEN HIKE">
+    <meta property="og:url" content="https://blkmenhike.vercel.app/story-summit.html">
+    <meta property="og:title" content="The Summit That Changed Everything // BLK MEN HIKE">
+    <meta property="og:description" content="Marcus hadn't talked to another man about grief in 12 years. Then he crossed 14,000 feet with his line brothers and couldn't stop.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1501555088652-021faa106b9b?q=80&w=1200&auto=format&fit=crop">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Summit That Changed Everything // BLK MEN HIKE">
+    <meta name="twitter:description" content="Marcus hadn't talked to another man about grief in 12 years. Then he crossed 14,000 feet with his line brothers and couldn't stop.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1501555088652-021faa106b9b?q=80&w=1200&auto=format&fit=crop">
+    <title>The Summit That Changed Everything // BLK MEN HIKE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .article-hero { position: relative; min-height: 65vh; display: flex; align-items: flex-end; overflow: hidden; }
+        .article-hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: brightness(0.4) contrast(1.1); z-index: 1; }
+        .article-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(5,5,5,1) 0%, rgba(5,5,5,0.2) 60%, transparent 100%); z-index: 2; }
+        .article-hero-content { position: relative; z-index: 10; padding: 0 80px 80px; width: 100%; }
+        .article-kicker { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.25em; color: var(--accent); text-transform: uppercase; margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; }
+        .article-kicker::before { content: ''; display: inline-block; width: 30px; height: 2px; background: var(--accent); }
+        .article-title { font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 5.5rem); line-height: 0.9; text-transform: uppercase; filter: url(#df-heavy); max-width: 900px; margin-bottom: 1.5rem; }
+        .article-meta { display: flex; gap: 3rem; flex-wrap: wrap; }
+        .article-meta-item { display: flex; flex-direction: column; gap: 3px; }
+        .article-meta-label { font-family: var(--font-mono); font-size: 0.55rem; color: var(--dimmer); text-transform: uppercase; letter-spacing: 0.15em; }
+        .article-meta-value { font-family: var(--font-mono); font-size: 0.72rem; color: var(--white); text-transform: uppercase; letter-spacing: 0.1em; }
+        .article-body { max-width: 780px; margin: 0 auto; padding: 80px 80px 120px; }
+        .article-lead { font-family: var(--font-display); font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.4; color: var(--white); margin-bottom: 3rem; filter: url(#df-light); text-transform: uppercase; border-left: 4px solid var(--accent); padding-left: 1.5rem; }
+        .article-p { font-size: 1.1rem; line-height: 1.85; color: #ccc; margin-bottom: 1.8rem; }
+        .article-p strong { color: var(--white); }
+        .article-quote { margin: 3rem 0; padding: 2rem 2.5rem; border: 1px solid var(--border); position: relative; }
+        .article-quote-mark { font-family: var(--font-display); font-size: 6rem; color: var(--accent); line-height: 0; position: absolute; top: 30px; left: 24px; opacity: 0.25; filter: url(#df-heavy); }
+        .article-quote-text { font-family: var(--font-display); font-size: clamp(1.1rem, 2vw, 1.4rem); line-height: 1.35; text-transform: uppercase; filter: url(#df-light); padding-top: 1rem; color: var(--white); }
+        .article-back { display: inline-flex; align-items: center; gap: 0.6rem; font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--dim); text-decoration: none; margin-bottom: 3rem; transition: color 0.2s; }
+        .article-back:hover { color: var(--accent); }
+        .article-back svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; }
+        .fraternal-tag { display: inline-block; font-family: var(--font-mono); font-size: 0.52rem; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid var(--accent); color: var(--accent); padding: 4px 10px; margin-right: 8px; margin-bottom: 8px; }
+        @media (max-width: 768px) {
+            .article-hero-content { padding: 0 20px 60px; }
+            .article-body { padding: 60px 20px 80px; }
+            .article-meta { gap: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+<svg class="svg-filters" aria-hidden="true">
+    <filter id="df-heavy" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="4" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/></filter>
+    <filter id="df-light" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="2" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/></filter>
+</svg>
+<div class="grain" aria-hidden="true"></div>
+<div class="viewport-frame" aria-hidden="true"><div class="fc fc-tl"></div><div class="fc fc-tr"></div><div class="fc fc-bl"></div><div class="fc fc-br"></div></div>
+<nav class="global-nav" aria-label="Main navigation">
+    <div class="sys-data">BMH // SYSTEM V2.4<br>44.5902° N, 104.7146° W</div>
+    <div class="nav-right">
+        <a class="nav-link" href="mind.html">MIND</a>
+        <a class="nav-link" href="city-guides.html">TRAILS</a>
+        <a class="nav-link" href="expeditions.html">EVENTS</a>
+        <a class="nav-link" href="join.html">ROSTER</a>
+        <a class="nav-link" href="sponsors.html" style="color:var(--accent)">PARTNERS</a>
+        <button class="menu-trigger" onclick="openMenu()" aria-label="Open menu">MENU.</button>
+    </div>
+</nav>
+<div id="nav-overlay" role="dialog" aria-modal="true">
+    <button class="overlay-close" onclick="closeMenu()">CLOSE.</button>
+    <a class="overlay-item" href="index.html" onclick="closeMenu()">HOME</a>
+    <a class="overlay-item" href="story.html" onclick="closeMenu()">OUR STORY</a>
+    <a class="overlay-item" href="brotherhood.html" onclick="closeMenu()">THE BROTHERHOOD</a>
+    <a class="overlay-item" href="mind.html" onclick="closeMenu()">MIND &amp; TRAIL</a>
+    <a class="overlay-item" href="city-guides.html" onclick="closeMenu()">CITY GUIDES</a>
+    <a class="overlay-item" href="gear.html" onclick="closeMenu()">GEAR</a>
+    <a class="overlay-item" href="hwb.html" onclick="closeMenu()">HIKING WHILE BLACK</a>
+    <a class="overlay-item" href="stories.html" onclick="closeMenu()">BROTHERHOOD STORIES</a>
+    <a class="overlay-item" href="expeditions.html" onclick="closeMenu()">EXPEDITIONS</a>
+    <a class="overlay-item" href="trail-guides.html" onclick="closeMenu()">TRAIL GUIDES</a>
+    <a class="overlay-item" href="field-reports.html" onclick="closeMenu()">FIELD REPORTS</a>
+    <a class="overlay-item" href="join.html" onclick="closeMenu()">JOIN THE ROSTER</a>
+    <a class="overlay-item" href="sponsors.html" onclick="closeMenu()">PARTNERSHIPS</a>
+    <div class="overlay-sys">NO MAN LEFT BEHIND // EST. 2024</div>
+</div>
+<div class="doodle-bar" aria-hidden="true">
+    <svg viewBox="0 0 100 100" class="doodle"><path d="M10,80 L32,35 L48,60 L75,25 L90,80 Z"/><path d="M85,10 L78,20 L86,22 L75,35" stroke-width="2"/></svg>
+    <svg viewBox="0 0 100 100" class="doodle"><circle cx="50" cy="50" r="22"/><path d="M40,60 Q50,70 60,60"/><path d="M50,15 L50,5 M15,50 L5,50 M85,50 L95,50 M50,85 L50,95"/></svg>
+    <svg viewBox="0 0 100 100" class="doodle"><path d="M15,25 Q50,20 85,25 L95,40 L80,55 Q45,60 10,55 L5,40 Z"/><path d="M50,55 L50,95"/></svg>
+</div>
+
+<div class="article-hero" style="padding-top: calc(var(--frame-pad) + 40px);">
+    <img class="article-hero-img" src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?q=80&w=2070&auto=format&fit=crop" alt="Mountain silhouette at dusk">
+    <div class="article-hero-overlay"></div>
+    <div class="article-hero-content">
+        <div class="article-kicker">Brotherhood Story // Denver, CO // July 2024</div>
+        <h1 class="article-title">The Summit That<br>Changed <span style="color:var(--accent)">Everything.</span></h1>
+        <div class="article-meta">
+            <div class="article-meta-item"><span class="article-meta-label">Brother</span><span class="article-meta-value">Marcus J.</span></div>
+            <div class="article-meta-item"><span class="article-meta-label">Peak</span><span class="article-meta-value">Quandary Peak, CO — 14,265 ft</span></div>
+            <div class="article-meta-item"><span class="article-meta-label">Chapter</span><span class="article-meta-value">BMH Denver</span></div>
+            <div class="article-meta-item"><span class="article-meta-label">Status</span><span class="article-meta-value">Crossed</span></div>
+        </div>
+    </div>
+</div>
+
+<div class="article-body">
+    <a href="stories.html" class="article-back">
+        <svg viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        Back to Brotherhood Stories
+    </a>
+
+    <div style="margin-bottom:2rem">
+        <span class="fraternal-tag">CROSSING STORY</span>
+        <span class="fraternal-tag">14ER</span>
+        <span class="fraternal-tag">GRIEF</span>
+        <span class="fraternal-tag">LINE BROTHERS</span>
+    </div>
+
+    <p class="article-lead reveal">Marcus hadn't talked to another man about grief in 12 years. Then he crossed 14,000 feet with his line brothers and couldn't stop. Sometimes altitude does what therapy can't.</p>
+
+    <p class="article-p reveal">Marcus joined the Denver chapter the way most brothers do — reluctantly. His coworker Devon had been on him for six months. Every Monday, Devon would show up to the office with trail dirt still on his boots and a look Marcus couldn't name. Not just tired. Something else. Like a man who had put something down and not picked it back up.</p>
+
+    <p class="article-p reveal">"Just come once," Devon told him. "You don't have to say anything. You don't have to do anything. Just show up." Devon said it the same way a big brother talks to a pledge who's overthinking the process. Not pressure. Permission.</p>
+
+    <p class="article-p reveal">Marcus had been carrying his father's death for three years. He'd handled it the way Black men are trained to handle things: efficiently, privately, and without burdening anyone with the weight of it. He went to the funeral. He helped his mother with the logistics. He went back to work. He told himself he was fine and believed it because there was no space to believe anything else.</p>
+
+    <div class="article-quote reveal">
+        <div class="article-quote-mark">"</div>
+        <div class="article-quote-text">You don't have to say anything. You don't have to do anything. Just show up.</div>
+    </div>
+
+    <p class="article-p reveal">The Denver chapter runs a 14er every July — their annual crossing. It's the hike that marks the line between brothers who've been through something together and brothers who haven't yet. Quandary Peak. 14,265 feet. Seven miles. 3,300 feet of elevation gain above treeline where the air gets thin and the landscape strips everything down to what's essential.</p>
+
+    <p class="article-p reveal">Marcus was the newest member on the line that morning. Six brothers ahead of him on the trail, Devon behind him — a big brother watching his little without making it obvious. The first three miles were social, the way early miles always are. Conversation, jokes, the easy rhythm of men who have walked together before. Marcus stayed quiet and let it wash over him.</p>
+
+    <p class="article-p reveal">Above treeline, at around 13,000 feet, something changed. The trail became technical — loose talus, exposure, wind that made every step deliberate. The conversation thinned out the way it does when the body's demands take precedence over the mind's performance. And in that thinning, something opened.</p>
+
+    <p class="article-p reveal">It was Brother Darius who said it first. Not to Marcus. To the mountain, almost — half talking, half thinking out loud. He was talking about his brother who'd died two summers ago, a conversation that had nowhere to go in the rest of his life but had been waiting for somewhere to land. Nobody stopped walking. Nobody made it a moment. It just became part of the trail.</p>
+
+    <div class="article-quote reveal">
+        <div class="article-quote-mark">"</div>
+        <div class="article-quote-text">Above treeline, the trail stripped everything down to what was essential. The performance became too expensive to maintain.</div>
+    </div>
+
+    <p class="article-p reveal">Marcus doesn't remember deciding to speak. He remembers the summit. He remembers standing at 14,265 feet with six men he'd known for three months and talking about his father for the first time since the funeral — really talking, not reporting. He remembers Devon's hand on his shoulder, the wordless acknowledgment that passes between brothers who understand what it cost to get to this particular altitude.</p>
+
+    <p class="article-p reveal">He crossed that summit as a different man than the one who started the trail. Not fixed. Not healed in any neat way. But lighter. The weight was still there, but he'd finally set it down long enough to know what it weighed — and that he didn't have to carry it alone.</p>
+
+    <p class="article-p reveal">That's what the 14er does for the Denver chapter every July. It's not just a hike. It's a crossing. You come out the other side belonging to something — and something belonging to you.</p>
+
+    <div class="article-quote reveal">
+        <div class="article-quote-mark">"</div>
+        <div class="article-quote-text">I came out the other side belonging to something. And something belonging to me.</div>
+    </div>
+
+    <p class="article-p reveal">Marcus has now completed four 14ers with the chapter. He is Devon's little brother on the mountain — and someone else's big brother to a new pledge who showed up reluctantly last spring. The line continues. That's how a brotherhood works.</p>
+</div>
+
+<footer>
+    <div class="footer-brand">BLK<span>.</span>MEN<span>.</span>HIKE</div>
+    <div class="footer-links">
+        <a class="footer-link" href="mind.html">MIND &amp; TRAIL</a>
+        <a class="footer-link" href="city-guides.html">CITY GUIDES</a>
+        <a class="footer-link" href="field-reports.html">FIELD REPORTS</a>
+        <a class="footer-link" href="stories.html">STORIES</a>
+        <a class="footer-link" href="join.html">ROSTER</a>
+    </div>
+    <div class="footer-sys">EST. 2024 // BUILT BY US. FOR US.<br>BLKMENHIKE.COM // NO MAN LEFT BEHIND</div>
+</footer>
+<script>
+    function openMenu() { document.getElementById('nav-overlay').classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeMenu() { document.getElementById('nav-overlay').classList.remove('open'); document.body.style.overflow = ''; }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+    const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

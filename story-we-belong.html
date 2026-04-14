@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ten Black men. One permit for Rainier base camp. They moved as a line, as a unit, as a brotherhood. The mountain didn't ask who they were. That was exactly the point.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="BLK MEN HIKE">
+    <meta property="og:url" content="https://blkmenhike.vercel.app/story-we-belong.html">
+    <meta property="og:title" content="We Belong Here // BLK MEN HIKE">
+    <meta property="og:description" content="Ten Black men. One permit for Rainier base camp. They moved as a line. The mountain didn't ask who they were — that was the point.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1542359649-31e03cd4d909?q=80&w=1200&auto=format&fit=crop">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="We Belong Here // BLK MEN HIKE">
+    <meta name="twitter:description" content="Ten Black men. One permit for Rainier base camp. They moved as a line. The mountain didn't ask who they were — that was the point.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1542359649-31e03cd4d909?q=80&w=1200&auto=format&fit=crop">
+    <title>We Belong Here // BLK MEN HIKE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .article-hero { position: relative; min-height: 65vh; display: flex; align-items: flex-end; overflow: hidden; }
+        .article-hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: brightness(0.4) contrast(1.1); z-index: 1; }
+        .article-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(5,5,5,1) 0%, rgba(5,5,5,0.2) 60%, transparent 100%); z-index: 2; }
+        .article-hero-content { position: relative; z-index: 10; padding: 0 80px 80px; width: 100%; }
+        .article-kicker { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.25em; color: var(--accent); text-transform: uppercase; margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; }
+        .article-kicker::before { content: ''; display: inline-block; width: 30px; height: 2px; background: var(--accent); }
+        .article-title { font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 5.5rem); line-height: 0.9; text-transform: uppercase; filter: url(#df-heavy); max-width: 900px; margin-bottom: 1.5rem; }
+        .article-meta { display: flex; gap: 3rem; flex-wrap: wrap; }
+        .article-meta-item { display: flex; flex-direction: column; gap: 3px; }
+        .article-meta-label { font-family: var(--font-mono); font-size: 0.55rem; color: var(--dimmer); text-transform: uppercase; letter-spacing: 0.15em; }
+        .article-meta-value { font-family: var(--font-mono); font-size: 0.72rem; color: var(--white); text-transform: uppercase; letter-spacing: 0.1em; }
+        .article-body { max-width: 780px; margin: 0 auto; padding: 80px 80px 120px; }
+        .article-lead { font-family: var(--font-display); font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.4; color: var(--white); margin-bottom: 3rem; filter: url(#df-light); text-transform: uppercase; border-left: 4px solid var(--accent); padding-left: 1.5rem; }
+        .article-p { font-size: 1.1rem; line-height: 1.85; color: #ccc; margin-bottom: 1.8rem; }
+        .article-p strong { color: var(--white); }
+        .article-quote { margin: 3rem 0; padding: 2rem 2.5rem; border: 1px solid var(--border); position: relative; }
+        .article-quote-mark { font-family: var(--font-display); font-size: 6rem; color: var(--accent); line-height: 0; position: absolute; top: 30px; left: 24px; opacity: 0.25; filter: url(#df-heavy); }
+        .article-quote-text { font-family: var(--font-display); font-size: clamp(1.1rem, 2vw, 1.4rem); line-height: 1.35; text-transform: uppercase; filter: url(#df-light); padding-top: 1rem; color: var(--white); }
+        .article-back { display: inline-flex; align-items: center; gap: 0.6rem; font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--dim); text-decoration: none; margin-bottom: 3rem; transition: color 0.2s; }
+        .article-back:hover { color: var(--accent); }
+        .article-back svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; }
+        .fraternal-tag { display: inline-block; font-family: var(--font-mono); font-size: 0.52rem; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid var(--accent); color: var(--accent); padding: 4px 10px; margin-right: 8px; margin-bottom: 8px; }
+        @media (max-width: 768px) {
+            .article-hero-content { padding: 0 20px 60px; }
+            .article-body { padding: 60px 20px 80px; }
+            .article-meta { gap: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+<svg class="svg-filters" aria-hidden="true">
+    <filter id="df-heavy" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="4" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/></filter>
+    <filter id="df-light" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="2" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/></filter>
+</svg>
+<div class="grain" aria-hidden="true"></div>
+<div class="viewport-frame" aria-hidden="true"><div class="fc fc-tl"></div><div class="fc fc-tr"></div><div class="fc fc-bl"></div><div class="fc fc-br"></div></div>
+<nav class="global-nav" aria-label="Main navigation">
+    <div class="sys-data">BMH // SYSTEM V2.4<br>44.5902° N, 104.7146° W</div>
+    <div class="nav-right">
+        <a class="nav-link" href="mind.html">MIND</a>
+        <a class="nav-link" href="city-guides.html">TRAILS</a>
+        <a class="nav-link" href="expeditions.html">EVENTS</a>
+        <a class="nav-link" href="join.html">ROSTER</a>
+        <a class="nav-link" href="sponsors.html" style="color:var(--accent)">PARTNERS</a>
+        <button class="menu-trigger" onclick="openMenu()" aria-label="Open menu">MENU.</button>
+    </div>
+</nav>
+<div id="nav-overlay" role="dialog" aria-modal="true">
+    <button class="overlay-close" onclick="closeMenu()">CLOSE.</button>
+    <a class="overlay-item" href="index.html" onclick="closeMenu()">HOME</a>
+    <a class="overlay-item" href="story.html" onclick="closeMenu()">OUR STORY</a>
+    <a class="overlay-item" href="brotherhood.html" onclick="closeMenu()">THE BROTHERHOOD</a>
+    <a class="overlay-item" href="mind.html" onclick="closeMenu()">MIND &amp; TRAIL</a>
+    <a class="overlay-item" href="city-guides.html" onclick="closeMenu()">CITY GUIDES</a>
+    <a class="overlay-item" href="gear.html" onclick="closeMenu()">GEAR</a>
+    <a class="overlay-item" href="hwb.html" onclick="closeMenu()">HIKING WHILE BLACK</a>
+    <a class="overlay-item" href="stories.html" onclick="closeMenu()">BROTHERHOOD STORIES</a>
+    <a class="overlay-item" href="expeditions.html" onclick="closeMenu()">EXPEDITIONS</a>
+    <a class="overlay-item" href="trail-guides.html" onclick="closeMenu()">TRAIL GUIDES</a>
+    <a class="overlay-item" href="field-reports.html" onclick="closeMenu()">FIELD REPORTS</a>
+    <a class="overlay-item" href="join.html" onclick="closeMenu()">JOIN THE ROSTER</a>
+    <a class="overlay-item" href="sponsors.html" onclick="closeMenu()">PARTNERSHIPS</a>
+    <div class="overlay-sys">NO MAN LEFT BEHIND // EST. 2024</div>
+</div>
+<div class="doodle-bar" aria-hidden="true">
+    <svg viewBox="0 0 100 100" class="doodle"><path d="M10,80 L32,35 L48,60 L75,25 L90,80 Z"/><path d="M85,10 L78,20 L86,22 L75,35" stroke-width="2"/></svg>
+    <svg viewBox="0 0 100 100" class="doodle"><circle cx="50" cy="50" r="22"/><path d="M40,60 Q50,70 60,60"/><path d="M50,15 L50,5 M15,50 L5,50 M85,50 L95,50 M50,85 L50,95"/></svg>
+    <svg viewBox="0 0 100 100" class="doodle"><path d="M15,25 Q50,20 85,25 L95,40 L80,55 Q45,60 10,55 L5,40 Z"/><path d="M50,55 L50,95"/></svg>
+</div>
+
+<div class="article-hero" style="padding-top: calc(var(--frame-pad) + 40px);">
+    <img class="article-hero-img" src="https://images.unsplash.com/photo-1542359649-31e03cd4d909?q=80&w=2070&auto=format&fit=crop" alt="Mountain peaks at dawn">
+    <div class="article-hero-overlay"></div>
+    <div class="article-hero-content">
+        <div class="article-kicker">Brotherhood Story // Seattle, WA // September 2024</div>
+        <h1 class="article-title">We Belong<br><span style="color:var(--accent)">Here.</span></h1>
+        <div class="article-meta">
+            <div class="article-meta-item"><span class="article-meta-label">The Line</span><span class="article-meta-value">10 Brothers</span></div>
+            <div class="article-meta-item"><span class="article-meta-label">Trail</span><span class="article-meta-value">Rainier Base Camp, WA</span></div>
+            <div class="article-meta-item"><span class="article-meta-label">Chapter</span><span class="article-meta-value">BMH Seattle</span></div>
+            <div class="article-meta-item"><span class="article-meta-label">Status</span><span class="article-meta-value">Line Crossed</span></div>
+        </div>
+    </div>
+</div>
+
+<div class="article-body">
+    <a href="stories.html" class="article-back">
+        <svg viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        Back to Brotherhood Stories
+    </a>
+
+    <div style="margin-bottom:2rem">
+        <span class="fraternal-tag">LINE CROSSING</span>
+        <span class="fraternal-tag">RAINIER</span>
+        <span class="fraternal-tag">RECLAMATION</span>
+        <span class="fraternal-tag">SEATTLE CHAPTER</span>
+    </div>
+
+    <p class="article-lead reveal">Ten Black men. One permit for Rainier base camp. A ranger who looked twice. They took the photo anyway — they were already on the mountain. The line had crossed.</p>
+
+    <p class="article-p reveal">The Seattle chapter doesn't call it a hike when they go to Rainier. They call it a march. That's not bravado — it's precision. There's a difference between wandering somewhere and moving toward it with intention and formation. Ten brothers roped together in a line, moving in sequence, each man accountable to the man in front of him and the man behind. That's not recreation. That's something older.</p>
+
+    <p class="article-p reveal">The permit took four months to secure. The chapter lead — Brother Kofi — ran the logistics with the discipline of a chapter dean running an intake process. Equipment lists, conditioning schedules, three prep hikes in the months before to build the line's cohesion. You don't take ten men to Rainier base camp without knowing how they move under pressure. That's how people get hurt. That's how a line falls apart.</p>
+
+    <div class="article-quote reveal">
+        <div class="article-quote-mark">"</div>
+        <div class="article-quote-text">We don't just show up. We prepare. We move as a unit. That's what makes it a crossing and not just a hike.</div>
+    </div>
+
+    <p class="article-p reveal">The ranger interaction happened at the trailhead. A routine permit check — except the ranger spent longer with the BMH line than with any of the other groups that morning. Asked the same questions twice. Kofi answered everything calmly, permits in hand, the line standing in formation behind him. No one moved. No one reacted. The youngest brother on the line — 24 years old, his first expedition — said later that watching Kofi handle it was its own kind of teaching. This is what a line leader does: he absorbs, he stays composed, he moves the line forward.</p>
+
+    <p class="article-p reveal">The climb to base camp at 10,188 feet took eleven hours round trip. The Cascades do not accommodate ego — the terrain is technical, the weather is unpredictable, and the physical demand is non-negotiable. At mile six, two brothers were struggling with altitude. The line slowed. Nobody complained. Nobody left. Three brothers rotated carrying extra weight. The youngest brother, who'd been worried about being the least experienced on the line, turned out to have the strongest lungs above 8,000 feet and spent the final approach setting pace at the front.</p>
+
+    <p class="article-p reveal">That rotation — strength redistributed as needed, weakness supported without shame, the line reconfiguring around whoever needs what — is the operational definition of brotherhood. It's what fraternities are supposed to be about when they're working the way they're designed to work. It's what most men never find outside of those structures, and what the trail builds organically when you take it seriously enough.</p>
+
+    <div class="article-quote reveal">
+        <div class="article-quote-mark">"</div>
+        <div class="article-quote-text">At base camp, one brother said: they built this mountain to be seen. We came to see it. Nobody can take that from us.</div>
+    </div>
+
+    <p class="article-p reveal">At base camp, with the summit of Rainier looming another 4,000 feet above and the line of brothers spread out in the alpine meadow, Brother Kofi said something that the chapter has been quoting since: <strong>"We are not guests here. We are not novelties. We are not exceptions. We are hikers. Act accordingly."</strong></p>
+
+    <p class="article-p reveal">They took the photo. Ten Black men at Rainier base camp, the volcano behind them, the line intact. It went everywhere. Brothers from other chapters posted it. People who had nothing to do with BMH reposted it. What traveled wasn't the mountain — it was the formation. Ten men standing together in a place that hadn't historically been built to see them there, looking like they had every right to be exactly where they were. Because they did. Because they do.</p>
+
+    <p class="article-p reveal">The Seattle chapter has now completed three Rainier expeditions. The line grows every year. Kofi's little brothers are running prep hikes for the next intake. The mountain didn't change. The chapter is building a legacy on it anyway.</p>
+</div>
+
+<footer>
+    <div class="footer-brand">BLK<span>.</span>MEN<span>.</span>HIKE</div>
+    <div class="footer-links">
+        <a class="footer-link" href="mind.html">MIND &amp; TRAIL</a>
+        <a class="footer-link" href="city-guides.html">CITY GUIDES</a>
+        <a class="footer-link" href="field-reports.html">FIELD REPORTS</a>
+        <a class="footer-link" href="stories.html">STORIES</a>
+        <a class="footer-link" href="join.html">ROSTER</a>
+    </div>
+    <div class="footer-sys">EST. 2024 // BUILT BY US. FOR US.<br>BLKMENHIKE.COM // NO MAN LEFT BEHIND</div>
+</footer>
+<script>
+    function openMenu() { document.getElementById('nav-overlay').classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeMenu() { document.getElementById('nav-overlay').classList.remove('open'); document.body.style.overflow = ''; }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+    const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
