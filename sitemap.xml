@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://blkmenhike.vercel.app/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://blkmenhike.vercel.app/story.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://blkmenhike.vercel.app/brotherhood.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://blkmenhike.vercel.app/mind.html</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://blkmenhike.vercel.app/hwb.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://blkmenhike.vercel.app/city-guides.html</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
