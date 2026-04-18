@@ -3,30 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Founder // BLK MEN HIKE // Queens, New York">
+    <meta name="description" content="How it started">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="BLK MEN HIKE">
-    <meta property="og:url" content="https://blkmenhike.vercel.app/talon-wilson.html">
-    <meta property="og:title" content="Talon Wilson — Founder // BLK MEN HIKE">
-    <meta property="og:description" content="Founder // BLK MEN HIKE // Queens, New York">
+    <meta property="og:url" content="https://blkmenhike.vercel.app/story-the-first-hike.html">
+    <meta property="og:title" content="The First Hike // BLK MEN HIKE">
+    <meta property="og:description" content="How it started">
     <meta property="og:image" content="https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&amp;w=1200&amp;auto=format&amp;fit=crop">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Talon Wilson — Founder // BLK MEN HIKE">
-    <meta name="twitter:description" content="Founder // BLK MEN HIKE // Queens, New York">
+    <meta name="twitter:title" content="The First Hike // BLK MEN HIKE">
+    <meta name="twitter:description" content="How it started">
     <meta name="twitter:image" content="https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&amp;w=1200&amp;auto=format&amp;fit=crop">
-    <title>Talon Wilson — Founder // BLK MEN HIKE</title>
+    <title>The First Hike // BLK MEN HIKE</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
-        .article-hero { position: relative; min-height: 70vh; display: flex; align-items: flex-end; overflow: hidden; }
-        .article-hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: brightness(0.45) contrast(1.1); z-index: 1; }
-        .article-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(5,5,5,1) 0%, rgba(5,5,5,0.3) 60%, transparent 100%); z-index: 2; }
+        .article-hero { position: relative; min-height: 65vh; display: flex; align-items: flex-end; overflow: hidden; }
+        .article-hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: brightness(0.4) contrast(1.1); z-index: 1; }
+        .article-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(5,5,5,1) 0%, rgba(5,5,5,0.2) 60%, transparent 100%); z-index: 2; }
         .article-hero-content { position: relative; z-index: 10; padding: 0 80px 80px; width: 100%; }
         .article-kicker { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.25em; color: var(--accent); text-transform: uppercase; margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; }
         .article-kicker::before { content: ''; display: inline-block; width: 30px; height: 2px; background: var(--accent); }
-        .article-title { font-family: var(--font-display); font-size: clamp(3rem, 7vw, 6.5rem); line-height: 0.88; text-transform: uppercase; filter: url(#df-heavy); max-width: 900px; margin-bottom: 1.5rem; }
-        .article-title span { color: var(--accent); }
+        .article-title { font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 5.5rem); line-height: 0.9; text-transform: uppercase; filter: url(#df-heavy); max-width: 900px; margin-bottom: 1.5rem; }
         .article-meta { display: flex; gap: 3rem; flex-wrap: wrap; }
         .article-meta-item { display: flex; flex-direction: column; gap: 3px; }
         .article-meta-label { font-family: var(--font-mono); font-size: 0.55rem; color: var(--dimmer); text-transform: uppercase; letter-spacing: 0.15em; }
@@ -34,15 +33,10 @@
         .article-body { max-width: 780px; margin: 0 auto; padding: 80px 80px 120px; }
         .article-lead { font-family: var(--font-display); font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.4; color: var(--white); margin-bottom: 3rem; filter: url(#df-light); text-transform: uppercase; border-left: 4px solid var(--accent); padding-left: 1.5rem; }
         .article-p { font-size: 1.1rem; line-height: 1.85; color: #ccc; margin-bottom: 1.8rem; }
+        .article-p strong { color: var(--white); }
         .article-quote { margin: 3rem 0; padding: 2rem 2.5rem; border: 1px solid var(--border); position: relative; }
         .article-quote-mark { font-family: var(--font-display); font-size: 6rem; color: var(--accent); line-height: 0; position: absolute; top: 30px; left: 24px; opacity: 0.25; filter: url(#df-heavy); }
         .article-quote-text { font-family: var(--font-display); font-size: clamp(1.1rem, 2vw, 1.4rem); line-height: 1.35; text-transform: uppercase; filter: url(#df-light); padding-top: 1rem; color: var(--white); }
-        .article-trail-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); padding: 2rem 2.5rem; margin: 3rem 0; }
-        .article-trail-card-title { font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1.5rem; }
-        .article-trail-stat { display: flex; flex-direction: column; gap: 4px; margin-bottom: 1.2rem; }
-        .article-trail-stat:last-child { margin-bottom: 0; }
-        .article-trail-stat-label { font-family: var(--font-mono); font-size: 0.55rem; color: var(--dim); text-transform: uppercase; letter-spacing: 0.15em; }
-        .article-trail-stat-value { font-family: var(--font-display); font-size: 1rem; filter: url(#df-light); text-transform: uppercase; }
         .article-back { display: inline-flex; align-items: center; gap: 0.6rem; font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--dim); text-decoration: none; margin-bottom: 3rem; transition: color 0.2s; }
         .article-back:hover { color: var(--accent); }
         .article-back svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; }
@@ -50,7 +44,6 @@
             .article-hero-content { padding: 0 20px 60px; }
             .article-body { padding: 60px 20px 80px; }
             .article-meta { gap: 1.5rem; }
-            .article-quote { padding: 1.5rem; }
         }</style>
 </head>
 <body>
@@ -100,42 +93,34 @@
     
     <div class="article-hero-overlay"></div>
     <div class="article-hero-content">
-        <div class="article-kicker">Featured Hiker // January 2024 // Queens, NY</div>
-        <h1 class="article-title">Talon<br><span>Wilson.</span></h1>
+        <div class="article-kicker">Brotherhood Story // New York // April 2026</div>
+        <h1 class="article-title">The First<br><span style="color:var(--accent)">Hike.</span></h1>
         <div class="article-meta">
-            <div class="article-meta-item"><span class="article-meta-label">Role</span><span class="article-meta-value">Founder</span></div>
-            <div class="article-meta-item"><span class="article-meta-label">Location</span><span class="article-meta-value">Queens, NY</span></div>
-            <div class="article-meta-item"><span class="article-meta-label">Joined</span><span class="article-meta-value">2024</span></div>
-            <div class="article-meta-item"><span class="article-meta-label">Status</span><span class="article-meta-value">First One In</span></div>
+            <div class="article-meta-item"><span class="article-meta-label">Author</span><span class="article-meta-value">Haron Wilson</span></div>
+            <div class="article-meta-item"><span class="article-meta-label">Chapter</span><span class="article-meta-value">New York</span></div>
         </div>
     </div>
 </div>
 
 <div class="article-body">
-    <a href="story.html" class="article-back">
+    <a href="stories.html" class="article-back">
         <svg viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-        Our Story
+        Back to Brotherhood Stories
     </a>
 
-    <p class="article-lead reveal">Talon Wilson didn't set out to build a movement. He went for a hike at Harriman State Park, looked around, and noticed something that he couldn't unfind.</p>
-    <p class="article-p reveal">It was a Saturday in early 2023. Talon had been hiking on his own for about a year — solo miles, mostly in the Hudson Valley.</p>
+    <p class="article-lead reveal">Silence, effort, the particular clarity that comes from putting your body to work.</p>
+    <p class="article-p reveal">It was a Saturday in early 2023. Talon had been hiking on his own for about a year.</p>
+<p class="article-p reveal">He stood there and counted. Dozens of hikers passing in both directions.</p>
 <div class="article-quote reveal">
     <div class="article-quote-mark">"</div>
-    <div class="article-quote-text">&quot;It wasn&#39;t hostile. It wasn&#39;t a moment. It was just the architecture — built without us in the blueprint. And once you see that, you can&#39;t stop seeing it.&quot;</div>
+    <div class="article-quote-text">&quot;It wasn&#39;t hostile. It wasn&#39;t a moment. It was just the architecture — built without us in the blueprint.&quot;</div>
 </div>
-<p class="article-p reveal">He spent the next two months looking for a community that already existed. He found nothing that took the brotherhood seriously.</p>
+<p class="article-p reveal">He could not remember the last time he had seen another Black man on a trail.</p>
 <div class="article-quote reveal">
     <div class="article-quote-mark">"</div>
-    <div class="article-quote-text">&quot;I wasn&#39;t looking to start something. I was looking for something that already existed. When I couldn&#39;t find it, I understood that meant I had to build it.&quot;</div>
+    <div class="article-quote-text">&quot;I wasn&#39;t looking to start something. I was looking for something that already existed.&quot;</div>
 </div>
-<p class="article-p reveal">BLK MEN HIKE launched in 2024 with a single chapter in New York and thirteen brothers on the first group hike.</p>
-    <div class="article-trail-card reveal">
-        <div class="article-trail-card-title">// Hiker Profile // BLK MEN HIKE</div>
-        <div class="article-trail-stat"><span class="article-trail-stat-label">Founding Trail</span><span class="article-trail-stat-value">Suffern-Bear Mountain Trail, Harriman State Park, NY</span></div>
-        <div class="article-trail-stat"><span class="article-trail-stat-label">Founded</span><span class="article-trail-stat-value">2024 // New York City // 13 brothers on the first hike</span></div>
-        <div class="article-trail-stat"><span class="article-trail-stat-label">Chapters at Launch</span><span class="article-trail-stat-value">1 (NYC) → 5 within 6 months (ATL, HOU, LA, CHI)</span></div>
-        <div class="article-trail-stat"><span class="article-trail-stat-label">What He Built</span><span class="article-trail-stat-value">Not a hiking club. A fraternal structure that uses the trail as its proving ground.</span></div>
-    </div>
+<p class="article-p reveal">BLK MEN HIKE launched in 2024 with a single chapter in New York.</p>
 </div>
 
 <footer>
